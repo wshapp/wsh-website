@@ -2,16 +2,19 @@ export default {
     id: 0,
     colors: {
         background: {
-            primary: '#000000',
-            primaryLight: '#0F0F0F',
-            secondary: '#000000'
+            primary: 'rgb(0, 0, 0)',
+            primaryLight: 'rgb(15, 15, 15)',
+            secondary: 'rgb(0, 0, 0)'
         },
         button: {
-            primary: '#EB3B5A'
+            primary: 'rgb(67, 181, 147)',
+            primaryShadow: 'rgb(67 181 147 / 70%)'
         },
         text: {
-            primary: '#FFFFFF',
-            secondary: '#000000',
+            primary: 'rgb(255, 255, 255)',
+            primaryLight: 'rgb(200, 200, 200)',
+            secondary: 'rgb(0, 0, 0)',
+            ternary: 'rgb(67, 181, 147)'
         }
     }
 }

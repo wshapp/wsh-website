@@ -19,17 +19,28 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "@constants/*": ["./src/constants/*"],
-      "@components/*": ["./src/components/*"],
-      "@themes/*": ["./src/themes/*"],
-      "@styles/*": ["./src/styles/*"],
-      "@screens/*": ["./src/screens/*"]
+      "@constants/*": [
+        "./src/constants/*"
+      ],
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@themes/*": [
+        "./src/themes/*"
+      ],
+      "@styles/*": [
+        "./src/styles/*"
+      ],
+      "@screens/*": [
+        "./src/screens/*"
+      ]
     }
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "next.config.js"
   ],
   "exclude": [
     "node_modules"
