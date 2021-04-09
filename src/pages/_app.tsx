@@ -5,6 +5,7 @@ import { ThemeProvider } from 'styled-components';
 import { themeType } from '@constants/themes';
 
 import '@styles/app.scss';
+import MainLayout from '@components/layout/MainLayout';
 
 const App = ({ Component, pageProps, router }: AppProps) => {
 
@@ -19,12 +20,14 @@ const App = ({ Component, pageProps, router }: AppProps) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Component
-        {...pageProps}
-        router={router}
-        theme={theme}
-        setTheme={setTheme}
-      />
+      <MainLayout>
+        <Component
+          {...pageProps}
+          router={router}
+          theme={theme}
+          setTheme={setTheme}
+        />
+      </MainLayout>
     </ThemeProvider >
   )
 }
