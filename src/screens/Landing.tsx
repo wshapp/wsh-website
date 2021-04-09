@@ -13,7 +13,7 @@ const Landing = () => (
             <Container>
                 <FeaturedContainer>
                     <FeaturedTitle>wsh - Closed Alpha Release</FeaturedTitle>
-                    <FeaturedSubTitle>The house where you can make friends quickly</FeaturedSubTitle>
+                    <FeaturedSubtitle>The house where you can make friends quickly</FeaturedSubtitle>
                     <FeaturedDescription>Wsh connects you with new friends by audio, discover another communication approach</FeaturedDescription>
                 </FeaturedContainer>
             </Container>
@@ -45,6 +45,7 @@ const FeaturedContainer = styled.div`
     max-width: 400px;
     text-align: center;
     margin: 100px auto 0;
+    user-select: none;
 `;
 
 const FeaturedTitle = styled.h1`
@@ -53,7 +54,7 @@ const FeaturedTitle = styled.h1`
     letter-spacing: 1px;
 `;
 
-const FeaturedSubTitle = styled.h2`
+const FeaturedSubtitle = styled.h2`
     margin-top: 15px;
     font-weight: 700;
     font-size: 28px;

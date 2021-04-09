@@ -2,13 +2,13 @@ import styled from "styled-components";
 
 import Link from "@components/Link";
 import Button from "./layout/Button";
-import { INDEX, SIGN_IN } from "@constants/routes";
+import * as ROUTES from "@constants/routes";
 
 const Navbar = () => (
     <NavbarContainer>
         <Nav>
-            <NavItem><Link href={INDEX}>wshLogo</Link></NavItem>
-            <NavItem><Link href={SIGN_IN}><Button>Log In</Button></Link></NavItem>
+            <NavItem><Link href={ROUTES.INDEX}>wshLogo</Link></NavItem>
+            <NavItem><Link href={ROUTES.SIGN_IN}><Button>Log In</Button></Link></NavItem>
         </Nav>
     </NavbarContainer>
 )

@@ -10,6 +10,10 @@ export default {
             primary: 'rgb(67, 181, 147)',
             primaryShadow: 'rgb(67 181 147 / 70%)'
         },
+        border: {
+            primary: 'rgb(255, 255, 255)',
+            primaryLight: 'rgb(200, 200, 200)',
+        },
         text: {
             primary: 'rgb(255, 255, 255)',
             primaryLight: 'rgb(200, 200, 200)',
