@@ -21,7 +21,7 @@ const SignIn = () => (
                 <AuthWrapper>
                     <AuthContent>
                         <LogoContainer>
-                            <Image src="/static/images/rvby.png" alt="Wsh Logo" width={40} height={40} />
+                            <Logo src="/static/images/rvby.png" alt="Wsh Logo" />
                             <LogoTitle>wsh</LogoTitle>
                         </LogoContainer>
                         <HeaderContainer>
@@ -130,6 +130,12 @@ const LogoContainer = styled.div`
     align-items: center;
     user-select: none;
     pointer-events: none;
+`;
+
+const Logo = styled.img`
+    max-height: 40px;
+    height: 100%;
+    width: auto;
 `;
 
 const LogoTitle = styled.h1`
