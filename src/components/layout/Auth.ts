@@ -138,6 +138,7 @@ export const Field = styled.input`
     margin-top: 5px;
     border: none;
     outline: none;
+    border-radius: 0;
     border-bottom: 1px solid ${props => props.theme.colors.border.primaryLight};
     padding: 10px 0;
     font-weight: $fontWeightBold;
