@@ -11,14 +11,14 @@ const SignIn = () => (
                 <FeaturedContainer>
                     <FeaturedTitle>Hello!</FeaturedTitle>
                     <FeaturedSubtitle>Don't you have an account yet?</FeaturedSubtitle>
-                    <Link href={ROUTES.SIGN_UP}><FeaturedButton>Create an account</FeaturedButton></Link>
+                    <FeaturedButton href={ROUTES.SIGN_UP} as={Link}>Create an account</FeaturedButton>
                 </FeaturedContainer>
             </FeaturedCol>
             <AuthCol>
                 <AuthWrapper>
                     <AuthContent>
                         <LogoContainer>
-                            <Logo src="/static/images/rvby.png" alt="Wsh Logo" />
+                            <Logo alt="Wsh Logo" />
                             <LogoTitle>wsh</LogoTitle>
                         </LogoContainer>
                         <HeaderContainer>

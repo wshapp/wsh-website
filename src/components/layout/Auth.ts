@@ -1,5 +1,7 @@
-import Link from "@components/Link";
 import styled from "styled-components";
+
+import { WshLogo } from "@components/layout/Icons";
+import Link from "@components/Link";
 import { Button } from "./Buttons";
 
 export const Content = styled.div`
@@ -83,11 +85,7 @@ export const LogoContainer = styled.div`
     pointer-events: none;
 `;
 
-export const Logo = styled.img`
-    max-height: 40px;
-    height: 100%;
-    width: auto;
-`;
+export const Logo = styled(WshLogo)``;
 
 export const LogoTitle = styled.h1`
     margin-left: 5px;
@@ -98,6 +96,8 @@ export const HeaderContainer = styled.div`
     margin-top: 50px;
     display: flex;
     flex-direction: column;
+    user-select: none;
+    pointer-events: none;
 `;
 
 export const HeaderTitle = styled.h1`
@@ -130,6 +130,8 @@ export const FieldLabel = styled.label`
     font-size: 13px;
     font-weight: 700;
     text-transform: uppercase;
+    user-select: none;
+    pointer-events: none;
 `;
 
 export const Field = styled.input`

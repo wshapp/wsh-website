@@ -18,6 +18,7 @@ export const Button = styled.button`
   border: none;
   transition: all 0.2s;
   line-height: 1;
+  user-select: none;
 
   &:hover {
     filter: brightness(0.8);

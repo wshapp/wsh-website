@@ -3,12 +3,13 @@ import styled from "styled-components";
 import Link from "@components/Link";
 import { Button } from "./layout/Buttons";
 import * as ROUTES from "@constants/routes";
+import { WshLogo } from "./layout/Icons";
 
 const Navbar = () => (
     <NavbarContainer>
         <Nav>
-            <NavItem><Link href={ROUTES.INDEX}>wshLogo</Link></NavItem>
-            <NavItem><Link href={ROUTES.SIGN_IN}><Button>Log In</Button></Link></NavItem>
+            <NavItem><Link href={ROUTES.INDEX}><WshLogo /></Link></NavItem>
+            <NavItem><Button href={ROUTES.SIGN_IN} as={Link}>Log In</Button></NavItem>
         </Nav>
     </NavbarContainer>
 )
