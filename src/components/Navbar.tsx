@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 import Link from "@components/Link";
-import Button from "./layout/Button";
+import { Button } from "./layout/Buttons";
 import * as ROUTES from "@constants/routes";
 
 const Navbar = () => (

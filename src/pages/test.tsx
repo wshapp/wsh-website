@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import styled from 'styled-components';
-import Button from '@components/layout/Button';
+import { Button } from '@components/layout/Buttons';
 import { THEMES } from '@constants/themes';
 
 export default function Home({ theme, setTheme }) {

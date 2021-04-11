@@ -9,14 +9,13 @@ import MainLayout from '@components/layout/MainLayout';
 
 const App = ({ Component, pageProps, router }: AppProps) => {
 
-
   let storedTheme;
   const [theme, setTheme] = React.useState(storedTheme ?? THEMES.BLACK);
 
   React.useEffect(() => {
     storedTheme = localStorage.getItem('theme');
     console.log(storedTheme);
-  }, [])
+  }, []);
 
   return (
     <ThemeProvider theme={theme}>
