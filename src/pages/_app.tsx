@@ -1,6 +1,6 @@
 import React from 'react';
 import { AppProps } from 'next/app';
-import { ThemeProvider } from 'styled-components';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
 
 import { THEMES } from '@constants/themes';
 
@@ -19,6 +19,7 @@ const App = ({ Component, pageProps, router }: AppProps) => {
 
   return (
     <ThemeProvider theme={theme}>
+      <GlobalStyle />
       <MainLayout>
         <Component
           {...pageProps}
@@ -30,5 +31,35 @@ const App = ({ Component, pageProps, router }: AppProps) => {
     </ThemeProvider >
   )
 }
+
+const GlobalStyle = createGlobalStyle`
+  html,
+  body,
+  #__next {
+      height: 100%;
+  }
+
+  body,
+  input,
+  button,
+  textarea {
+      font-family: "Poppins", -apple-system, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      text-align: left;
+      color: #ffffff;
+  }
+
+  a {
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.5);
+      transition: all 0.2s;
+      cursor: pointer;
+
+      &:hover {
+          color: rgba(255, 255, 255, 1);
+      }
+  }
+`;
 
 export default App
