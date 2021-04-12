@@ -7,6 +7,11 @@ import { Button } from "./Buttons";
 export const Content = styled.div`
     display: flex;
     height: 100%;
+
+    @media (max-width: 768px) {
+        flex-direction: column-reverse;
+        justify-content: flex-end;
+    }
 `;
 
 export const Col = styled.div`
@@ -19,7 +24,8 @@ export const FeaturedCol = styled(Col)`
     width: 60%;
     
     @media (max-width: 768px) {
-        display: none;
+        width: 100%;
+        padding-bottom: 30px;
     }
 `;
 
@@ -34,6 +40,9 @@ export const FeaturedTitle = styled.h2`
     font-size: 24px;
     font-weight: 700;
     user-select: none;
+    @media (max-width: 768px) {
+        display: none;
+    }
 `;
 
 export const FeaturedSubtitle = styled.h3`
@@ -65,6 +74,7 @@ export const AuthWrapper = styled.div`
 
     @media (max-width: 768px) {
         border-radius: 0;
+        background-color: ${props => props.theme.colors.background.primary};
     }
 `;
 
@@ -74,6 +84,7 @@ export const AuthContent = styled.div`
     max-width: 60%;
 
     @media (max-width: 768px) {
+        margin-top: 30px;
         max-width: 80%;
     }
 `;
@@ -98,6 +109,10 @@ export const HeaderContainer = styled.div`
     flex-direction: column;
     user-select: none;
     pointer-events: none;
+    
+    @media (max-width: 768px) {
+        margin-top: 30px;
+    }
 `;
 
 export const HeaderTitle = styled.h1`
@@ -114,6 +129,10 @@ export const AuthForm = styled.form`
     padding: 50px 0 30px;
     display: flex;
     flex-direction: column;
+
+    @media (max-width: 768px) {
+        margin-bottom: 0
+    }
 `;
 
 export const FieldContainer = styled.div`
@@ -142,7 +161,7 @@ export const Field = styled.input`
     border-bottom: 1px solid ${props => props.theme.colors.border.primaryLight};
     padding: 10px 0;
     font-weight: $fontWeightBold;
-    background-color: ${props => props.theme.colors.background.primaryLight};
+    background: transparent;
     color: ${props => props.theme.colors.text.primary};
     transition: all 0.2s;
 

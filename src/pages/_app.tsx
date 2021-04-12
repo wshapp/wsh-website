@@ -36,7 +36,8 @@ const GlobalStyle = createGlobalStyle`
   html,
   body,
   #__next {
-      height: 100%;
+    height: 100%;
+    background-color: ${props => props.theme.colors.background.primary};
   }
 
   body,
@@ -47,7 +48,7 @@ const GlobalStyle = createGlobalStyle`
       font-size: 16px;
       font-weight: 400;
       text-align: left;
-      color: #ffffff;
+      color: ${props => props.theme.colors.text.primary};
   }
 
   a {
