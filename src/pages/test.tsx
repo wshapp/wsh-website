@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styled from 'styled-components';
 import { Button } from '@components/layout/Buttons';
-import { THEMES } from '@constants/themes';
+import themes from '@services/themes';
 
 export default function Home({ theme, setTheme }) {
     console.log(theme);
@@ -14,13 +14,13 @@ export default function Home({ theme, setTheme }) {
 
             <h1>Hello Wold</h1>
             <Button onClick={() => {
-                setTheme(THEMES.BLACK);
+                setTheme(themes.black);
             }}>Noir</Button>
             <Button onClick={() => {
-                setTheme(THEMES.WHITE);
+                setTheme(themes.white);
             }}>Blanc</Button>
             <Button onClick={() => {
-                setTheme(THEMES.RED);
+                setTheme(themes.red);
             }}>Rouge</Button>
         </Container>
     )

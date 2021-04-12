@@ -2,7 +2,7 @@ import React from 'react';
 import { AppProps } from 'next/app';
 import { createGlobalStyle, ThemeProvider } from 'styled-components';
 
-import { THEMES } from '@constants/themes';
+import themes from '@services/themes';
 
 import '@styles/app.scss';
 import MainLayout from '@components/layout/MainLayout';
@@ -10,7 +10,7 @@ import MainLayout from '@components/layout/MainLayout';
 const App = ({ Component, pageProps, router }: AppProps) => {
 
   let storedTheme;
-  const [theme, setTheme] = React.useState(storedTheme ?? THEMES.BLACK);
+  const [theme, setTheme] = React.useState(storedTheme ?? themes.black);
 
   React.useEffect(() => {
     storedTheme = localStorage.getItem('theme');
