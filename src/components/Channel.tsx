@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import ChannelHeader from "./ChannelHeader";
 
 import Title from "./Title";
 
@@ -12,7 +13,7 @@ const Channel: React.FC<ChannelProps> = ({ id }) => {
         <>
             <Title title="Messages" subtitle={`Alice ${id}`} />
             <Container>
-                conv avec Alice {id}
+                <ChannelHeader receiverId={id} />
             </Container>
         </>
     );
@@ -20,10 +21,9 @@ const Channel: React.FC<ChannelProps> = ({ id }) => {
 
 const Container = styled.div`
     display: flex;
-    width: 100%;
-    height: 100%;
     overflow: auto;
+    padding: 30px;
+    flex: 1;
 `;
-
 
 export default Channel;

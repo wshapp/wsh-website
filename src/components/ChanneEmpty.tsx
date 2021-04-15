@@ -18,6 +18,7 @@ const Container = styled.div`
     overflow: auto;
     align-items: center;
     justify-content: center;
+    user-select: none;
 `;
 
 const Content = styled.div`

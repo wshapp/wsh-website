@@ -57,7 +57,7 @@ const SenderPicture = styled.img`
     object-fit: center;
 `;
 
-const Content = styled.p`
+const Content = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
