@@ -1,12 +1,14 @@
 import React from 'react';
 import { AppProps } from 'next/app';
-import { createGlobalStyle, ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components';
 
 import themes from '@services/themes';
-
-import '@styles/app.scss';
 import MainLayout from '@components/layout/MainLayout';
-import { MainTrackProvider } from 'src/context/MainTrack';
+import GlobalStyle from '@components/layout/GlobalStyle';
+import { MainTrackProvider } from '@context/MainTrack';
+
+import 'remixicon/fonts/remixicon.css'
+import '@styles/app.scss';
 
 const App = ({ Component, pageProps, router }: AppProps) => {
 
@@ -34,36 +36,5 @@ const App = ({ Component, pageProps, router }: AppProps) => {
     </ThemeProvider >
   )
 }
-
-const GlobalStyle = createGlobalStyle`
-  html,
-  body,
-  #__next {
-    height: 100%;
-    background-color: ${props => props.theme.colors.background.primary};
-  }
-
-  body,
-  input,
-  button,
-  textarea {
-      font-family: "Poppins", -apple-system, sans-serif;
-      font-size: 16px;
-      font-weight: 400;
-      text-align: left;
-      color: ${props => props.theme.colors.text.primary};
-  }
-
-  a {
-      text-decoration: none;
-      color: rgba(255, 255, 255, 0.5);
-      transition: all 0.2s;
-      cursor: pointer;
-
-      &:hover {
-          color: rgba(255, 255, 255, 1);
-      }
-  }
-`;
 
 export default App

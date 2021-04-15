@@ -22,6 +22,9 @@
       "@constants/*": [
         "./src/constants/*"
       ],
+      "@context/*": [
+        "./src/context/*"
+      ],
       "@components/*": [
         "./src/components/*"
       ],
