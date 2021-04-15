@@ -6,6 +6,7 @@ import themes from '@services/themes';
 
 import '@styles/app.scss';
 import MainLayout from '@components/layout/MainLayout';
+import { MainTrackProvider } from 'src/context/MainTrack';
 
 const App = ({ Component, pageProps, router }: AppProps) => {
 
@@ -19,15 +20,17 @@ const App = ({ Component, pageProps, router }: AppProps) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <MainLayout>
-        <Component
-          {...pageProps}
-          router={router}
-          theme={theme}
-          setTheme={setTheme}
-        />
-      </MainLayout>
+      <MainTrackProvider>
+        <GlobalStyle />
+        <MainLayout>
+          <Component
+            {...pageProps}
+            router={router}
+            theme={theme}
+            setTheme={setTheme}
+          />
+        </MainLayout>
+      </MainTrackProvider>
     </ThemeProvider >
   )
 }

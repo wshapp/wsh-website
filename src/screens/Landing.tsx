@@ -1,25 +1,32 @@
+import React from "react";
 import styled from "styled-components";
 
 import Navbar from "@components/Navbar";
 import Title from '@components/Title';
 import Container from '@components/layout/Container';
+import { MainTrackContext } from "src/context/MainTrack";
 
-const Landing = () => (
-    <>
-        <Title title="The house where you can make friends quickly" />
-        <Navbar />
-        <BackgroundHeader />
-        <Content>
-            <Container>
-                <FeaturedContainer>
-                    <FeaturedTitle>wsh - Closed Alpha Release</FeaturedTitle>
-                    <FeaturedSubtitle>The house where you can make friends quickly</FeaturedSubtitle>
-                    <FeaturedDescription>Wsh connects you with new friends by audio, discover another communication approach</FeaturedDescription>
-                </FeaturedContainer>
-            </Container>
-        </Content>
-    </>
-);
+const Landing = () => {
+
+    const [playbackRate, setPlaybackRate] = React.useState(0.75);
+
+    return (
+        <>
+            <Title title="The house where you can make friends quickly" />
+            <Navbar />
+            <BackgroundHeader />
+            <Content>
+                <Container>
+                    <FeaturedContainer>
+                        <FeaturedTitle>wsh - Closed Alpha Release</FeaturedTitle>
+                        <FeaturedSubtitle>The house where you can make friends quickly</FeaturedSubtitle>
+                        <FeaturedDescription>Wsh connects you with new friends by audio, discover another communication approach</FeaturedDescription>
+                    </FeaturedContainer>
+                </Container>
+            </Content>
+        </>
+    );
+}
 
 const BackgroundHeader = styled.div`
     position: absolute;
