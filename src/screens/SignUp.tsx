@@ -41,6 +41,10 @@ const SignUp = () => (
                                 <FieldLabel>Password</FieldLabel>
                                 <Field type="password" id="password" placeholder="Password" />
                             </FieldContainer>
+                            <FieldContainer>
+                                <FieldLabel>Alpha Key</FieldLabel>
+                                <Field type="text" id="accessKey" placeholder="Alpha Key" />
+                            </FieldContainer>
                             <AuthButton>Create an account</AuthButton>
                         </AuthForm>
                     </AuthContent>
