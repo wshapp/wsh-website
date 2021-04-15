@@ -5,7 +5,7 @@ export default createGlobalStyle`
     body,
     #__next {
         height: 100%;
-        background-color: ${props => props.theme.colors.background.primary};
+        background-color: ${props => props.theme.colors.layout.darkest};
     }
 
     body,
@@ -16,7 +16,7 @@ export default createGlobalStyle`
         font-size: 16px;
         font-weight: 400;
         text-align: left;
-        color: ${props => props.theme.colors.text.primary};
+        color: ${props => props.theme.colors.text.lightest};
     }
 
     body {
@@ -43,8 +43,8 @@ export default createGlobalStyle`
 
     a {
         text-decoration: none;
-        color: rgba(255, 255, 255, 0.5);
-        transition: all 0.2s;
+        color: rgba(255, 255, 255, .8);
+        transition: all .2s;
         cursor: pointer;
 
         &:hover {

@@ -5,7 +5,7 @@ import { Router } from "next/router";
 import Title from "@components/Title";
 import InboxMessages from "@components/InboxMessages";
 import ChannelEmpty from "@components/ChanneEmpty";
-import { SafeBackground, SafeContainer, SafeContent } from "@components/layout/Safe";
+import { SafeContentBackground, SafeContainer, SafeContent } from "@components/layout/Safe";
 import Channel from "@components/Channel";
 
 interface MessagesProps {
@@ -20,7 +20,7 @@ const Messages: NextPage<MessagesProps> = ({ router }) => {
             <Title title="Messages" />
             <SafeContainer>
                 <SideNavbar />
-                <SafeBackground>
+                <SafeContentBackground>
                     <SafeContent>
                         <InboxMessages router={router} />
                         {id ?
@@ -28,7 +28,7 @@ const Messages: NextPage<MessagesProps> = ({ router }) => {
                             <ChannelEmpty />
                         }
                     </SafeContent>
-                </SafeBackground>
+                </SafeContentBackground>
             </SafeContainer>
         </>
     );

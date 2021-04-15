@@ -68,13 +68,13 @@ export const AuthWrapper = styled.div`
     overflow-y: auto;
     width: 100%;
     height: 100%;
-    background-color: ${props => props.theme.colors.background.primaryLight};
+    background-color: ${props => props.theme.colors.layout.darker};
     border-top-left-radius: 25px;
     border-bottom-left-radius: 25px;
 
     @media (max-width: 768px) {
         border-radius: 0;
-        background-color: ${props => props.theme.colors.background.primary};
+        background-color: ${props => props.theme.colors.layout.darkest};
     }
 `;
 
@@ -122,7 +122,7 @@ export const HeaderTitle = styled.h1`
 
 export const HeaderDescription = styled.p`
     margin-top: 15px;
-    color: ${props => props.theme.colors.text.primaryLight};
+    color: ${props => props.theme.colors.text.light};
 `;
 
 export const AuthForm = styled.form`
@@ -158,26 +158,26 @@ export const Field = styled.input`
     border: none;
     outline: none;
     border-radius: 0;
-    border-bottom: 1px solid ${props => props.theme.colors.border.primaryLight};
+    border-bottom: 1px solid ${props => props.theme.colors.layout.lightest};
     padding: 10px 0;
     font-weight: $fontWeightBold;
     background: transparent;
-    color: ${props => props.theme.colors.text.primary};
+    color: ${props => props.theme.colors.text.lightest};
     transition: all 0.2s;
 
     &:focus {
-        border-bottom: 1px solid ${props => props.theme.colors.border.primary};
-        color: ${props => props.theme.colors.text.primary};
+        border-bottom: 1px solid ${props => props.theme.colors.layout.lighter};
+        color: ${props => props.theme.colors.text.lightest};
     }
 
     &::placeholder {
-        color: ${props => props.theme.colors.text.primaryLight};
+        color: ${props => props.theme.colors.text.light};
     }
 `;
 
 export const ForgotPassword = styled(Link)`
     margin-top: 10px;
-    color: ${props => props.theme.colors.text.primaryLight};
+    color: ${props => props.theme.colors.text.light};
     font-size: 13px;
 `;
 

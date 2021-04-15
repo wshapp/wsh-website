@@ -19,6 +19,7 @@ const Container = styled.div`
     align-items: center;
     justify-content: center;
     user-select: none;
+    background-color: ${props => props.theme.colors.layout.dark};
 `;
 
 const Content = styled.div`
@@ -40,7 +41,7 @@ const Title = styled.h3`
 `;
 
 const Description = styled.p`
-    color: ${props => props.theme.colors.text.primaryLight};
+    color: ${props => props.theme.colors.text.light};
 `;
 
 export default ChannelEmpty;

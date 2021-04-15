@@ -37,8 +37,8 @@ const Container = styled.li`
     transition: all .2s;
     user-select: none;
 
-    &:hover {
-        background-color: rgba(0, 0, 0, .5);
+    &:hover, &.active {
+        background-color: ${props => props.theme.colors.layout.darkest};
     }
 `;
 
@@ -72,7 +72,7 @@ const Sender = styled.p`
 const Description = styled.p`
     display: flex;
     font-size: 13px;
-    color: ${props => props.theme.colors.text.primaryLight};
+    color: ${props => props.theme.colors.text.light};
 `;
 
 export default MessageItem;

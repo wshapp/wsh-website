@@ -24,6 +24,7 @@ const Container = styled.div`
     overflow: auto;
     padding: 30px;
     flex: 1;
+    background-color: ${props => props.theme.colors.layout.dark};
 `;
 
 export default Channel;

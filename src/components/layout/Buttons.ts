@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const Button = styled.button`
-  background: ${props => props.theme.colors.button.primary};
-  color: ${props => props.theme.colors.text.primary};
-  box-shadow: ${props => props.theme.colors.button.primaryShadow} 0px 10px 40px -10px;
+  background: ${props => props.theme.colors.accent.light};
+  color: ${props => props.theme.colors.text.lightest};
+  box-shadow: ${props => props.theme.colors.accent.lightShadow} 0px 10px 40px -10px;
   padding: 8px 22px;
   border-radius: 10px;
   display: flex;

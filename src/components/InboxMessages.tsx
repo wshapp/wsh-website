@@ -28,7 +28,7 @@ const InboxMessages: React.FC<InboxMessagesProps> = ({ router }) => {
 const Container = styled.div`
     display: flex;
     flex-direction: column;
-    background-color: rgba(0,0,0,.5);
+    background-color: ${props => props.theme.colors.layout.darker};
     width: 300px;
 `;
 
@@ -42,12 +42,12 @@ const Title = styled(Link)`
     font-size: 24px;
     font-weight: 700;
     user-select: none;
-    color: ${props => props.theme.colors.text.primary};
+    color: ${props => props.theme.colors.text.lightest};
 
     span {
         margin-left: 5px;
         font-size: 14px;
-        color: ${props => props.theme.colors.text.primaryLight};
+        color: ${props => props.theme.colors.text.light};
     }
 `;
 

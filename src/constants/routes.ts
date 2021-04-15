@@ -6,3 +6,4 @@ export const RECOVERY = '/auth/recovery';
 export const RECOVERY_CHANGE = '/auth/recovery/change';
 
 export const MESSAGES = '/messages';
+export const SETTINGS = '/settings';

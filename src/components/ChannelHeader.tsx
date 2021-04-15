@@ -26,7 +26,6 @@ const Header = styled.div`
     height: 80px;
     width: 100%;
     align-items: center;
-    background-color: ${props => props.theme.colors.background.primaryLighter};
 `;
 
 const ReceiverProfile = styled.div`
@@ -62,13 +61,13 @@ const ReceiverContent = styled.div`
 const Receiver = styled(Link)`
     font-size: 24px;
     font-weight: 700;
-    color: ${props => props.theme.colors.text.primary};
+    color: ${props => props.theme.colors.text.lightest};
 `;
 
 const Description = styled.p`
     display: flex;
     font-size: 13px;
-    color: ${props => props.theme.colors.text.primaryLight};
+    color: ${props => props.theme.colors.text.light};
 `;
 
 export default ChannelHeader;

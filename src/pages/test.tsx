@@ -28,6 +28,6 @@ export default function Home({ theme, setTheme }) {
 
 const Container = styled.div`
   height: 100%;
-  background-color: ${props => props.theme.colors.background.primary};
-  color: ${props => props.theme.colors.text.primary};
+  background-color: ${props => props.theme.colors.layout.darkest};
+  color: ${props => props.theme.colors.text.lightest};
 `;

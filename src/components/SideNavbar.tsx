@@ -18,7 +18,7 @@ const SideNavbar: React.FC = () => (
                 <NavLink href={ROUTES.MESSAGES}><i className="ri-chat-1-line"></i></NavLink>
             </NavItem>
             <NavItem>
-                <NavLink><i className="ri-notification-line"></i></NavLink>
+                <NavLink href={ROUTES.SETTINGS}><i className="ri-settings-line"></i></NavLink>
             </NavItem>
         </Nav>
     </Container>
