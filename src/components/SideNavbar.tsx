@@ -12,7 +12,7 @@ const SideNavbar: React.FC = () => (
         </Link>
         <Nav>
             <NavItem>
-                <NavLink><i className="ri-home-4-line"></i></NavLink>
+                <NavLink href={ROUTES.INDEX}><i className="ri-home-4-line"></i></NavLink>
             </NavItem>
             <NavItem>
                 <NavLink href={ROUTES.MESSAGES}><i className="ri-chat-1-line"></i></NavLink>
