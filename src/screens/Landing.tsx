@@ -4,11 +4,8 @@ import styled from "styled-components";
 import Navbar from "@components/Navbar";
 import Title from '@components/Title';
 import Container from '@components/layout/Container';
-import { MainTrackContext } from "src/context/MainTrack";
 
 const Landing = () => {
-
-    const [playbackRate, setPlaybackRate] = React.useState(0.75);
 
     return (
         <>
