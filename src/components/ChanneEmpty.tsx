@@ -6,14 +6,14 @@ const ChannelEmpty: React.FC = () => (
         <Content>
             <Icon className="ri-inbox-line" />
             <Title>It's cool to chat with someone</Title>
-            <Description>It's cool to chat with someone</Description>
+            <Description>Pick a person from left menu and start your conversation</Description>
         </Content>
     </Container>
 );
 
 const Container = styled.div`
     display: flex;
-    width: 100%;
+    flex: 1;
     height: 100%;
     overflow: auto;
     align-items: center;
