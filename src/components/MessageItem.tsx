@@ -19,7 +19,7 @@ const MessageItem: React.FC<MessageItemProps> = ({ router, id }) => {
     return (
         <Container onClick={handleClick}>
             <PictureContainer>
-                <SenderPicture src={`https://picsum.photos/200/200`} />
+                <SenderPicture src={`https://picsum.photos/200/200`} loading="lazy" />
             </PictureContainer>
             <Content>
                 <Sender>Alice</Sender>
