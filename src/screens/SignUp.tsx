@@ -30,8 +30,16 @@ const SignUp = () => (
                         </HeaderContainer>
                         <AuthForm>
                             <FieldContainer>
+                                <FieldLabel>Name</FieldLabel>
+                                <Field type="text" id="name" placeholder="Name" />
+                            </FieldContainer>
+                            <FieldContainer>
                                 <FieldLabel>Username</FieldLabel>
                                 <Field type="text" id="username" placeholder="Username" />
+                            </FieldContainer>
+                            <FieldContainer>
+                                <FieldLabel>Birthdate</FieldLabel>
+                                <Field type="text" id="birthdate" placeholder="dd-mm-yyyy" />
                             </FieldContainer>
                             <FieldContainer>
                                 <FieldLabel>Email</FieldLabel>
