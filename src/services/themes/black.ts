@@ -3,8 +3,8 @@ export default {
     colors: {
         layout: {
             darkest: 'rgb(0, 0, 0)',
-            darker: 'rgb(15, 15, 15)',
-            dark: 'rgb(20, 20, 20)',
+            darker: 'rgb(10, 10, 10)',
+            dark: 'rgb(15, 15, 15)',
             light: 'rgb(30, 30, 30)',
             lighter: 'rgb(36, 36, 36)',
             lightest: 'rgb(45, 45, 45)'
