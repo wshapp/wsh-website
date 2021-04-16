@@ -1,8 +1,10 @@
 import { NextPage } from "next";
 import Title from "@components/Title";
-import { SafeContentBackground, SafeContainer, SafeContent, SafeSidebar, SafeSidebarBackground } from "@components/layout/Safe";
+import { SafeContentBackground, SafeContainer, SafeContent } from "@components/layout/Safe";
 import SideNavbar from "@components/SideNavbar";
 import ManageAccount from "@components/ManageAccount";
+import Sidebar from "@components/Sidebar";
+import SettingsNavbar from "@components/SettingsNavbar";
 
 const Settings: NextPage = () => (
     <>
@@ -14,10 +16,9 @@ const Settings: NextPage = () => (
                     <ManageAccount />
                 </SafeContent>
             </SafeContentBackground>
-            <SafeSidebarBackground>
-                <SafeSidebar>
-                </SafeSidebar>
-            </SafeSidebarBackground>
+            <Sidebar>
+                <SettingsNavbar />
+            </Sidebar>
         </SafeContainer>
     </>
 )

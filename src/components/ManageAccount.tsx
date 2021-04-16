@@ -11,7 +11,7 @@ const ManageAccount: React.FC = () => (
             <Section>
                 <FieldContainer>
                     <FieldLabel>Name</FieldLabel>
-                    <Field type="text" id="username" placeholder="Username" />
+                    <Field type="text" id="username" placeholder="Name" />
                 </FieldContainer>
                 <FieldContainer>
                     <FieldLabel>Username</FieldLabel>
@@ -26,7 +26,6 @@ const ManageAccount: React.FC = () => (
                     <Field type="text" id="birthday" placeholder="March 25, 1994" />
                 </FieldContainer>
             </Section>
-
             <SaveButton>Save Changes</SaveButton>
         </Container>
     </>
@@ -39,8 +38,7 @@ const Container = styled.div`
     flex: 1;
 `;
 
-const HeaderTitle = styled.div`
-    display: flex;
+const HeaderTitle = styled.h1`
     font-size: 20px;
     font-weight: 600;
 `;

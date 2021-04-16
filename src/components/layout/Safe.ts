@@ -25,18 +25,3 @@ export const SafeContent = styled.div`
     border-bottom-left-radius: 10px;
     overflow: hidden;
 `;
-
-
-export const SafeSidebarBackground = styled.div`
-    display: flex;
-    background-color: ${props => props.theme.colors.layout.dark};
-`;
-
-export const SafeSidebar = styled.div`
-    display: flex;
-    width: 400px;
-    background-color: ${props => props.theme.colors.layout.darker};
-    border-top-left-radius: 10px;
-    border-bottom-left-radius: 10px;
-    overflow: hidden;
-`;
