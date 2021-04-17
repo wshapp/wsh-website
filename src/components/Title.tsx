@@ -1,6 +1,6 @@
 import Head from 'next/head';
 
-import { APPNAME } from '@constants/app';
+import { APPNAME } from '@constants/main';
 
 const Title = ({ title, subtitle }: { title: string; subtitle?: string }) => (
     <Head>

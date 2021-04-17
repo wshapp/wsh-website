@@ -1,6 +1,6 @@
 import React from 'react';
 import NextHead from 'next/head';
-import { APPNAME } from '@constants/app';
+import { APPNAME } from '@constants/main';
 
 const Head = () => {
 
