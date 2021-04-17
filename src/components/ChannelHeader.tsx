@@ -10,16 +10,16 @@ interface ChannelHeaderProps {
 
 const ChannelHeader: React.FC<ChannelHeaderProps> = ({ receiverId }) => (
     <Container>
-        <ReceiverProfile>
-            <PictureContainer>
-                <ReceiverPicture src={`https://picsum.photos/200/200`} />
-            </PictureContainer>
+        <Content>
+            <IconContainer>
+                <Icon src={`https://picsum.photos/200/200`} />
+            </IconContainer>
             <ReceiverContent>
-                <Receiver href={"/alice"}>Alice {receiverId}</Receiver>
+                <Title href={"/alice"}>Alice {receiverId}</Title>
                 <Description>Online</Description>
             </ReceiverContent>
-        </ReceiverProfile>
-            <Infobar />
+        </Content>
+        <Infobar />
     </Container>
 );
 
@@ -30,13 +30,13 @@ const Container = styled.div`
     justify-content: space-between;
 `;
 
-const ReceiverProfile = styled.div`
+const Content = styled.div`
     display: flex;
     align-items: center;
     user-select: none;
 `;
 
-const PictureContainer = styled.div`
+const IconContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -45,7 +45,7 @@ const PictureContainer = styled.div`
     pointer-events: none;
 `;
 
-const ReceiverPicture = styled.img`
+const Icon = styled.img`
     width: 60px;
     height: 60px;
     border-radius: 10px;
@@ -60,7 +60,7 @@ const ReceiverContent = styled.div`
     line-height: 1.2;
 `;
 
-const Receiver = styled(Link)`
+const Title = styled(Link)`
     font-size: 24px;
     font-weight: 700;
     color: ${props => props.theme.colors.text.lightest};

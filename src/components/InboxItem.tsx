@@ -19,11 +19,11 @@ const InboxItem: React.FC<InboxItemProps> = ({ id }) => {
 
     return (
         <Container onClick={handleClick}>
-            <PictureContainer>
-                <SenderPicture src={`https://picsum.photos/200/200`} loading="lazy" />
-            </PictureContainer>
+            <IconContainer>
+                <Icon src={`https://picsum.photos/200/200`} loading="lazy" />
+            </IconContainer>
             <Content>
-                <Sender>Alice</Sender>
+                <Title>Alice</Title>
                 <Description>Sent • 3h • 26 🔥</Description>
             </Content>
         </Container>
@@ -43,7 +43,7 @@ const Container = styled.li`
     }
 `;
 
-const PictureContainer = styled.div`
+const IconContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -51,7 +51,7 @@ const PictureContainer = styled.div`
     height: 50px;
 `;
 
-const SenderPicture = styled.img`
+const Icon = styled.img`
     width: 40px;
     height: 40px;
     border-radius: 10px;
@@ -66,7 +66,7 @@ const Content = styled.div`
     line-height: 1.2;
 `;
 
-const Sender = styled.p`
+const Title = styled.p`
     font-size: 16px;
 `;
 

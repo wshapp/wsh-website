@@ -1,8 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import ChannelHeader from "./ChannelHeader";
+import Infobar from "./Infobar";
 
 const ChannelEmpty: React.FC = () => (
     <Container>
+        <Header>
+            <Infobar />
+        </Header>
         <Content>
             <Icon className="ri-inbox-line" />
             <Title>It's cool to chat with someone</Title>
@@ -13,17 +18,23 @@ const ChannelEmpty: React.FC = () => (
 
 const Container = styled.div`
     display: flex;
+    flex-direction: column;
     flex: 1;
     height: 100%;
-    overflow: auto;
-    align-items: center;
-    justify-content: center;
     user-select: none;
     background-color: ${props => props.theme.colors.layout.dark};
 `;
 
+const Header = styled.div`
+    display: flex;
+    height: 80px;
+    width: 100%;
+    justify-content: flex-end;
+`;
+
 const Content = styled.div`
     display: flex;
+    flex: 1;
     flex-direction: column;
     align-items: center;
     justify-content: center;
