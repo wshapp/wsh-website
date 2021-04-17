@@ -9,7 +9,7 @@ interface ChannelHeaderProps {
 }
 
 const ChannelHeader: React.FC<ChannelHeaderProps> = ({ receiverId }) => (
-    <Header>
+    <Container>
         <ReceiverProfile>
             <PictureContainer>
                 <ReceiverPicture src={`https://picsum.photos/200/200`} />
@@ -20,14 +20,13 @@ const ChannelHeader: React.FC<ChannelHeaderProps> = ({ receiverId }) => (
             </ReceiverContent>
         </ReceiverProfile>
             <Infobar />
-    </Header>
+    </Container>
 );
 
-const Header = styled.div`
+const Container = styled.div`
     display: flex;
     height: 80px;
     width: 100%;
-    align-items: center;
     justify-content: space-between;
 `;
 

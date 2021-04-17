@@ -1,18 +1,15 @@
 import SideNavbar from "@components/SideNavbar";
 import { NextPage } from "next";
-import { Router } from "next/router";
+import { useRouter } from "next/router";
 
 import Title from "@components/Title";
-import InboxMessages from "@components/InboxMessages";
+import Inbox from "@components/Inbox";
 import ChannelEmpty from "@components/ChanneEmpty";
 import { SafeContentBackground, SafeContainer, SafeContent } from "@components/layout/Safe";
 import Channel from "@components/Channel";
 
-interface MessagesProps {
-    router: Router;
-}
-
-const Messages: NextPage<MessagesProps> = ({ router }) => {
+const Messages: NextPage = () => {
+    const router = useRouter();
     const { id } = router.query;
 
     return (
@@ -22,7 +19,7 @@ const Messages: NextPage<MessagesProps> = ({ router }) => {
                 <SideNavbar />
                 <SafeContentBackground>
                     <SafeContent>
-                        <InboxMessages router={router} />
+                        <Inbox />
                         {id ?
                             <Channel id={id} /> :
                             <ChannelEmpty />

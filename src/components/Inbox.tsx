@@ -1,16 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { Router } from "next/router";
 
-import MessageItem from "./MessageItem";
+import InboxItem from "./InboxItem";
 import * as ROUTES from "@constants/routes";
 import Link from "./Link";
 
-interface InboxMessagesProps {
-    router: Router;
-}
-
-const InboxMessages: React.FC<InboxMessagesProps> = ({ router }) => {
+const Inbox: React.FC = () => {
     return (
         <Container>
             <Header>
@@ -18,7 +13,7 @@ const InboxMessages: React.FC<InboxMessagesProps> = ({ router }) => {
             </Header>
             <MessageList>
                 {Array.from({ length: 50 }, (_, i) => (
-                    <MessageItem id={i} router={router} key={i} />
+                    <InboxItem id={i} key={i} />
                 ))}
             </MessageList>
         </Container>
@@ -59,4 +54,4 @@ const MessageList = styled.ul`
     overflow: auto;
 `;
 
-export default InboxMessages;
+export default Inbox;

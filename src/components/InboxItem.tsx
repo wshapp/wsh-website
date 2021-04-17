@@ -1,15 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import { Router } from "next/router";
+import { useRouter } from "next/router";
 
 import * as ROUTES from "@constants/routes";
 
-interface MessageItemProps {
-    router: Router
+interface InboxItemProps {
     id: number
 }
 
-const MessageItem: React.FC<MessageItemProps> = ({ router, id }) => {
+const InboxItem: React.FC<InboxItemProps> = ({ id }) => {
+
+    const router = useRouter();
 
     const handleClick = (event) => {
         event.preventDefault();
@@ -75,4 +76,4 @@ const Description = styled.p`
     color: ${props => props.theme.colors.text.light};
 `;
 
-export default MessageItem;
+export default InboxItem;

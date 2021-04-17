@@ -1,6 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import ChannelContent from "./ChannelContent";
 import ChannelHeader from "./ChannelHeader";
+import ChannelTools from "./ChannelTools";
 
 import Title from "./Title";
 
@@ -14,6 +16,8 @@ const Channel: React.FC<ChannelProps> = ({ id }) => {
             <Title title="Messages" subtitle={`Alice ${id}`} />
             <Container>
                 <ChannelHeader receiverId={id} />
+                <ChannelContent />
+                <ChannelTools />
             </Container>
         </>
     );
@@ -21,8 +25,7 @@ const Channel: React.FC<ChannelProps> = ({ id }) => {
 
 const Container = styled.div`
     display: flex;
-    overflow: auto;
-    padding: 30px;
+    flex-direction: column;
     flex: 1;
     background-color: ${props => props.theme.colors.layout.dark};
 `;
