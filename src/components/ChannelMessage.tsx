@@ -43,7 +43,6 @@ const Content = styled.div`
     flex-direction: column;
     flex: 1;
     margin-top: 5px;
-    padding-left: 5px;
 `;
 
 export default ChannelMessage;
