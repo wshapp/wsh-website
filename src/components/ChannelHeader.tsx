@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Infobar from "./Infobar";
 
 import Link from "./Link";
 
@@ -18,6 +19,7 @@ const ChannelHeader: React.FC<ChannelHeaderProps> = ({ receiverId }) => (
                 <Description>Online</Description>
             </ReceiverContent>
         </ReceiverProfile>
+            <Infobar />
     </Header>
 );
 
@@ -26,6 +28,7 @@ const Header = styled.div`
     height: 80px;
     width: 100%;
     align-items: center;
+    justify-content: space-between;
 `;
 
 const ReceiverProfile = styled.div`
