@@ -1,19 +1,45 @@
 import React from 'react';
+import { NextPage } from 'next';
+import { useRouter } from 'next/router';
+import { useMutation } from '@apollo/client';
+import gql from 'graphql-tag';
 
 import Title from '@components/Title';
 import Link from "@components/Link";
 import * as ROUTES from "@constants/routes";
 import { AuthButton, AuthCol, AuthContent, AuthForm, AuthWrapper, Content, FeaturedButton, FeaturedCol, FeaturedContainer, FeaturedSubtitle, FeaturedTitle, Field, FieldContainer, FieldLabel, ForgotPassword, HeaderContainer, HeaderDescription, HeaderTitle, Logo, LogoContainer, LogoTitle } from "@components/layout/Auth";
+import { useForm } from '@hooks/useForm';
+import { AuthContext } from '@context/Auth';
 
-const SignIn = ({ router }) => {
+const SignIn: NextPage = () => {
 
+    const router = useRouter();
+
+    const context = React.useContext(AuthContext);
     const [errors, setErrors] = React.useState({})
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
+    const loginUserCallback = () => { loginUser(); }
 
-        router.push(ROUTES.INDEX);
-    }
+    const { onChange, onSubmit, values } = useForm(loginUserCallback, {
+        username: '',
+        password: ''
+    });
+
+    const [loginUser, { loading }] = useMutation(LOGIN_USER, {
+        update(
+            _,
+            {
+                data: { login: userData }
+            }
+        ) {
+            context.login(userData);
+            router.push('/');
+        },
+        onError(err) {
+            setErrors(err.graphQLErrors[0].extensions.exception.errors);
+        },
+        variables: values
+    });
 
     return (
         <>
@@ -21,7 +47,7 @@ const SignIn = ({ router }) => {
             <Content>
                 <FeaturedCol>
                     <FeaturedContainer>
-                        <FeaturedTitle>Hello!</FeaturedTitle>
+                        <FeaturedTitle>Hello! {loading ? 'loading' : 'not loading'}</FeaturedTitle>
                         <FeaturedSubtitle>Don't you have an account yet?</FeaturedSubtitle>
                         <FeaturedButton href={ROUTES.SIGN_UP} as={Link}>Create an account</FeaturedButton>
                     </FeaturedContainer>
@@ -37,14 +63,14 @@ const SignIn = ({ router }) => {
                                 <HeaderTitle>Welcome back!</HeaderTitle>
                                 <HeaderDescription>Sign in to continue</HeaderDescription>
                             </HeaderContainer>
-                            <AuthForm onSubmit={handleSubmit}>
+                            <AuthForm onSubmit={onSubmit}>
                                 <FieldContainer>
-                                    <FieldLabel htmlFor="email">Identifiant</FieldLabel>
-                                    <Field type="text" id="email" placeholder="Email, Tel or Username" />
+                                    <FieldLabel htmlFor="username">Identifiant</FieldLabel>
+                                    <Field type="text" id="username" name="username" placeholder="Email, Tel or Username" onChange={onChange} />
                                 </FieldContainer>
                                 <FieldContainer>
                                     <FieldLabel htmlFor="password">Password</FieldLabel>
-                                    <Field type="password" id="password" placeholder="Password" />
+                                    <Field type="password" id="password" name="password" placeholder="Password" onChange={onChange} />
                                 </FieldContainer>
                                 <ForgotPassword href={ROUTES.RECOVERY}>Forgot Password?</ForgotPassword>
                                 <AuthButton>Login</AuthButton>
@@ -56,5 +82,17 @@ const SignIn = ({ router }) => {
         </>
     );
 }
+
+const LOGIN_USER = gql`
+  mutation login($username: String!, $password: String!) {
+    login(username: $username, password: $password) {
+      id
+      email
+      username
+      createdAt
+      token
+    }
+  }
+`;
 
 export default SignIn;

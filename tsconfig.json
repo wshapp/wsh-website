@@ -28,6 +28,9 @@
       "@components/*": [
         "./src/components/*"
       ],
+      "@hooks/*": [
+        "./src/hooks/*"
+      ],
       "@themes/*": [
         "./src/themes/*"
       ],
