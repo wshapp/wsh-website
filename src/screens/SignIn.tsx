@@ -43,7 +43,7 @@ const SignIn: NextPage = () => {
 
     return (
         <>
-            <Title title="Log in" />
+            <Title title="Log In" />
             <Content>
                 <FeaturedCol>
                     <FeaturedContainer>

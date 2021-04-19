@@ -55,7 +55,7 @@ const SignUp = () => {
 
     return (
         <>
-            <Title title="Log in" />
+            <Title title="Register" />
             <Content>
                 <FeaturedCol>
                     <FeaturedContainer>
