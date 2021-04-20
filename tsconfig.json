@@ -31,6 +31,9 @@
       "@hooks/*": [
         "./src/hooks/*"
       ],
+      "@queries/*": [
+        "./src/queries/*"
+      ],
       "@themes/*": [
         "./src/themes/*"
       ],

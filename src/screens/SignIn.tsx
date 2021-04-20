@@ -10,6 +10,7 @@ import * as ROUTES from "@constants/routes";
 import { AuthButton, AuthCol, AuthContent, AuthForm, AuthWrapper, Content, FeaturedButton, FeaturedCol, FeaturedContainer, FeaturedSubtitle, FeaturedTitle, Field, FieldContainer, FieldLabel, ForgotPassword, HeaderContainer, HeaderDescription, HeaderTitle, Logo, LogoContainer, LogoTitle } from "@components/layout/Auth";
 import { useForm } from '@hooks/useForm';
 import { AuthContext } from '@context/Auth';
+import { LOGIN_USER } from '@queries/auth';
 
 const SignIn: NextPage = () => {
 
@@ -82,17 +83,5 @@ const SignIn: NextPage = () => {
         </>
     );
 }
-
-const LOGIN_USER = gql`
-  mutation login($username: String!, $password: String!) {
-    login(username: $username, password: $password) {
-      id
-      email
-      username
-      createdAt
-      token
-    }
-  }
-`;
 
 export default SignIn;

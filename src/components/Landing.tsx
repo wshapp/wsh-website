@@ -5,7 +5,7 @@ import Navbar from "@components/Navbar";
 import Title from '@components/Title';
 import Container from '@components/layout/Container';
 
-const Landing = () => {
+const Landing: React.FC = () => {
 
     return (
         <>

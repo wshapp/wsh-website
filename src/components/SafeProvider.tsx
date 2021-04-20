@@ -3,7 +3,7 @@ import { useRouter } from "next/router";
 
 import { AuthContext } from "@context/Auth";
 import * as ROUTES from "@constants/routes";
-import Loading from "@screens/Loading";
+import Loading from "@components/Loading";
 
 const SafeProvider: React.FC = ({ children }) => {
     const { user } = React.useContext(AuthContext);

@@ -1,4 +1,3 @@
-import { NextPage } from "next";
 import React from "react";
 import { useQuery } from '@apollo/react-hooks';
 
@@ -7,15 +6,15 @@ import SafeProvider from "@components/SafeProvider";
 import Sidebar from "@components/Sidebar";
 import SideNavbar from "@components/SideNavbar";
 import Title from "@components/Title";
-import { FETCH_POSTS_QUERY } from "src/queries";
+import { GET_POSTS } from "@queries/posts";
 import PostsFeed from "@components/PostsFeed";
 
-const House: NextPage = () => {
+const House: React.FC = () => {
 
     const {
         loading,
         data
-    }: { loading: any; data?: any } = useQuery(FETCH_POSTS_QUERY);
+    }: { loading: any; data?: any } = useQuery(GET_POSTS);
 
     return (
         <SafeProvider>
