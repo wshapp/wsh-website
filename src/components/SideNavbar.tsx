@@ -89,7 +89,7 @@ const NavItem = styled.li`
 
 const Icon = styled.i`
     &.active {
-        color: #fff
+        color: ${props => props.theme.colors.text.lightest};
     }
 `;
 
