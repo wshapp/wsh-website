@@ -73,7 +73,7 @@ const SignIn: NextPage = () => {
                                     <Field type="password" id="password" name="password" placeholder="Password" onChange={onChange} />
                                 </FieldContainer>
                                 <ForgotPassword href={ROUTES.RECOVERY}>Forgot Password?</ForgotPassword>
-                                <AuthButton>Login</AuthButton>
+                                <AuthButton>Log In</AuthButton>
                             </AuthForm>
                         </AuthContent>
                     </AuthWrapper>

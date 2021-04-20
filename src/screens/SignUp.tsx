@@ -61,7 +61,7 @@ const SignUp = () => {
                     <FeaturedContainer>
                         <FeaturedTitle>Hello!</FeaturedTitle>
                         <FeaturedSubtitle>Already have an account?</FeaturedSubtitle>
-                        <FeaturedButton href={ROUTES.SIGN_IN} as={Link}>Login</FeaturedButton>
+                        <FeaturedButton href={ROUTES.SIGN_IN} as={Link}>Log In</FeaturedButton>
                     </FeaturedContainer>
                 </FeaturedCol>
                 <AuthCol>

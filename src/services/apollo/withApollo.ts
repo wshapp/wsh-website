@@ -6,7 +6,7 @@ import { setContext } from 'apollo-link-context';
 import withApollo from 'next-with-apollo';
 
 const httpLink = new HttpLink({
-    uri: `http://localhost:8000`,
+    uri: process.env.NEXT_PUBLIC_API || 'http://localhost:5000',
     credentials: 'same-origin',
 });
 

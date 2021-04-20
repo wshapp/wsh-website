@@ -13,7 +13,7 @@ const RecoveryChange = ({ router }) => {
                     <FeaturedContainer>
                         <FeaturedTitle>Hello!</FeaturedTitle>
                         <FeaturedSubtitle>Remember your password?</FeaturedSubtitle>
-                        <FeaturedButton href={ROUTES.SIGN_IN} as={Link}>Login</FeaturedButton>
+                        <FeaturedButton href={ROUTES.SIGN_IN} as={Link}>Log In</FeaturedButton>
                     </FeaturedContainer>
                 </FeaturedCol>
                 <AuthCol>
