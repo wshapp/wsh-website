@@ -17,13 +17,13 @@ const SideNavbar: React.FC = () => {
             </Link>
             <Nav>
                 <NavItem>
-                    <NavLink href={ROUTES.INDEX}><i className={pathname === ROUTES.INDEX ? 'ri-home-4-fill' : 'ri-home-4-line'}></i></NavLink>
+                    <NavLink href={ROUTES.INDEX}><Icon className={pathname === ROUTES.INDEX ? 'ri-home-4-fill active' : 'ri-home-4-line'} /></NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink href={ROUTES.MESSAGES}><i className={pathname.includes(ROUTES.MESSAGES) ? 'ri-chat-1-fill' : 'ri-chat-1-line'}></i></NavLink>
+                    <NavLink href={ROUTES.MESSAGES}><Icon className={pathname.includes(ROUTES.MESSAGES) ? 'ri-chat-1-fill active' : 'ri-chat-1-line'} /></NavLink>
                 </NavItem>
                 <NavItem>
-                    <NavLink href={ROUTES.SETTINGS}><i className={pathname.includes(ROUTES.SETTINGS) ? 'ri-settings-fill' : 'ri-settings-line'}></i></NavLink>
+                    <NavLink href={ROUTES.SETTINGS}><Icon className={pathname.includes(ROUTES.SETTINGS) ? 'ri-settings-fill active' : 'ri-settings-line'} /></NavLink>
                 </NavItem>
             </Nav>
         </Container>
@@ -84,6 +84,12 @@ const NavItem = styled.li`
         &:last-child {
             margin-right: 0;
         }
+    }
+`;
+
+const Icon = styled.i`
+    &.active {
+        color: #fff
     }
 `;
 

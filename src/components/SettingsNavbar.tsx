@@ -22,7 +22,7 @@ const SettingsNavbar: React.FC = () => (
         </Nav>
     </Container>
 );
-const Container = styled.h1`
+const Container = styled.nav`
     display: flex;
     flex-direction: column;
     padding: 15px;

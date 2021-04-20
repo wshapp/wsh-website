@@ -9,13 +9,13 @@ const House: NextPage = () => {
 
     return (
         <SafeProvider>
-            <Title title="The house where you can make friends quickly" />
+            <Title title="House" />
             <SafeContainer>
                 <SideNavbar />
                 <SafeContentBackground>
                     <SafeContent>
                         House
-                </SafeContent>
+                    </SafeContent>
                 </SafeContentBackground>
                 <Sidebar>
                 </Sidebar>

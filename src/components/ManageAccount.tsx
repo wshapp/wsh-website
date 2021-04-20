@@ -11,7 +11,7 @@ const ManageAccount: React.FC = () => (
             <Section>
                 <FieldContainer>
                     <FieldLabel>Name</FieldLabel>
-                    <Field type="text" id="username" placeholder="Name" />
+                    <Field type="text" id="name" placeholder="Name" />
                 </FieldContainer>
                 <FieldContainer>
                     <FieldLabel>Username</FieldLabel>
