@@ -7,13 +7,14 @@ import Inbox from "@components/Inbox";
 import ChannelEmpty from "@components/ChanneEmpty";
 import { SafeContentBackground, SafeContainer, SafeContent } from "@components/layout/Safe";
 import Channel from "@components/Channel";
+import SafeProvider from "@components/SafeProvider";
 
 const Messages: NextPage = () => {
     const router = useRouter();
     const { id } = router.query;
 
     return (
-        <>
+        <SafeProvider>
             <Title title="Messages" />
             <SafeContainer>
                 <SideNavbar />
@@ -27,7 +28,7 @@ const Messages: NextPage = () => {
                     </SafeContent>
                 </SafeContentBackground>
             </SafeContainer>
-        </>
+        </SafeProvider>
     );
 }
 

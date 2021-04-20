@@ -5,9 +5,10 @@ import SideNavbar from "@components/SideNavbar";
 import ManageAccount from "@components/ManageAccount";
 import Sidebar from "@components/Sidebar";
 import SettingsNavbar from "@components/SettingsNavbar";
+import SafeProvider from "@components/SafeProvider";
 
 const Settings: NextPage = () => (
-    <>
+    <SafeProvider>
         <Title title="Settings" />
         <SafeContainer>
             <SideNavbar />
@@ -20,7 +21,7 @@ const Settings: NextPage = () => (
                 <SettingsNavbar />
             </Sidebar>
         </SafeContainer>
-    </>
+    </SafeProvider>
 )
 
 
