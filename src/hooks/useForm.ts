@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const useForm = (callback, initialState = { body: null }) => {
+export const useForm = (callback, initialState = {}): { onChange: Function, onSubmit: Function, values: any} => {
     const [values, setValues] = React.useState(initialState);
 
     const onChange = (event) => {
