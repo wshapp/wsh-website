@@ -22,6 +22,8 @@ const Container = styled.div`
     flex-direction: column;
     overflow: auto;
     flex: 1;
+    align-items: center;
+    overflow: auto;
 `;
 
 const Content = styled.div`
@@ -31,7 +33,6 @@ const Content = styled.div`
     margin-top: -10px;
     margin-left: -10px;
     padding: 10px;
-    overflow: auto;
 `;
 
 export default PostsFeed;
