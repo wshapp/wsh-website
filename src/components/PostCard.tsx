@@ -15,25 +15,31 @@ const PostCard: React.FC<PostCardPost> = ({ post: { body, createdAt, id, usernam
                 </IconContainer>
                 <HeaderContent>
                     <Username>{username}</Username>
-                    <Description>{moment(createdAt).fromNow(true)}</Description>
+                    <Date>{moment(createdAt).fromNow(true)}</Date>
                 </HeaderContent>
             </Header>
             <Content>
                 {body}
             </Content>
+            <Footer>
+                <Reaction>
+                    <ReactionIcon className="ri-message-3-line" /> {commentCount}
+                </Reaction>
+                <Reaction>
+                    <ReactionIcon className="ri-heart-3-line" /> {likeCount}
+                </Reaction>
+            </Footer>
         </Container>
     )
 }
 
 const Container = styled.div`
     width: calc(100% - 15px * 2);
-    background-color: ${props => props.theme.colors.layout.darker};
 	margin: 0 2px 15px;
 	padding: 15px;
 	transition: opacity .4s ease-in-out;
     display: inline-block;
     column-break-inside: avoid;
-    border-radius: 10px;
 `;
 
 const Header = styled.div`
@@ -59,17 +65,19 @@ const Icon = styled.img`
 
 const HeaderContent = styled.div`
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 0 10px;
+    flex: 1;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-left: 10px;
     line-height: 1.2;
 `;
 
 const Username = styled.p`
     font-size: 16px;
+    font-weight: 600;
 `;
 
-const Description = styled.p`
+const Date = styled.p`
     display: flex;
     font-size: 13px;
     color: ${props => props.theme.colors.text.light};
@@ -79,5 +87,31 @@ const Content = styled.div`
     margin-top: 15px;
 `;
 
+const Footer = styled.div`
+    margin-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+`;
+
+const Reaction = styled.div`
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+    cursor: pointer;
+    
+    &:first-child {
+        margin-left: 0
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+`;
+
+const ReactionIcon = styled.i`
+    margin-right: 5px;
+    font-size: 15px
+`;
 
 export default PostCard;

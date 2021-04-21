@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import PostCard from "./PostCard";
+import PostForm from "./PostForm";
 
 interface PostsFeedProps {
     posts: any
@@ -9,6 +10,7 @@ const PostsFeed: React.FC<PostsFeedProps> = ({ posts }) => (
     <Container>
         <Wrapper>
             <Content>
+                <PostForm />
                 {posts &&
                     posts.map((post) => (
                         <PostCard post={post} key={post.id} />
