@@ -26,14 +26,14 @@ const PostCard: React.FC<PostCardPost> = ({ post: { body, createdAt, id, usernam
 }
 
 const Container = styled.div`
-    background-color: ${props => props.theme.colors.layout.light};
-    width: calc(50% - (10px + 15px * 2));
-    margin-left: 10px;
-    margin-top: 10px;
-    border-radius: 8px;
-    overflow: hidden;
-    cursor: pointer;
-    padding: 15px;
+    width: calc(100% - 15px * 2);
+    background-color: ${props => props.theme.colors.layout.darker};
+	margin: 0 2px 15px;
+	padding: 15px;
+	transition: opacity .4s ease-in-out;
+    display: inline-block;
+    column-break-inside: avoid;
+    border-radius: 10px;
 `;
 
 const Header = styled.div`
