@@ -1,10 +1,10 @@
 import React from 'react';
 
-export const useForm = (callback, initialState = {}) => {
+export const useForm = (callback, initialState = { body: null }) => {
     const [values, setValues] = React.useState(initialState);
 
     const onChange = (event) => {
-        if(event.target.getAttribute("contenteditable")) setValues({ ...values, [event.target.getAttribute("name")]: event.target.textContent });
+        if (event.target.getAttribute("contenteditable")) setValues({ ...values, [event.target.getAttribute("name")]: event.target.textContent });
         else setValues({ ...values, [event.target.name]: event.target.value });
     };
 
