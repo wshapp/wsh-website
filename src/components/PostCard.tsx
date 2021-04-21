@@ -53,6 +53,8 @@ const Icon = styled.img`
     height: 40px;
     border-radius: 10px;
     object-fit: center;
+    user-select: none;
+    pointer-events: none;
 `;
 
 const HeaderContent = styled.div`
