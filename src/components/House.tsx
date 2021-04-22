@@ -17,7 +17,7 @@ const House: React.FC = () => {
     }: { loading: any; data?: any } = useQuery(GET_POSTS);
 
     return (
-        <SafeProvider>
+        <SafeProvider noRedirect>
             <Title title="House" />
             <SafeContainer>
                 <SideNavbar />

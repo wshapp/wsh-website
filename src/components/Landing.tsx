@@ -9,7 +9,7 @@ import WildProvider from "./WildProvider";
 const Landing: React.FC = () => {
 
     return (
-        <WildProvider noRedirect>
+        <WildProvider>
             <Title title="The house where you can make friends quickly" />
             <Navbar />
             <BackgroundHeader />
