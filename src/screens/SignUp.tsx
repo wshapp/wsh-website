@@ -1,9 +1,12 @@
+import { NextPage } from 'next';
+
 import Title from '@components/Title';
 import Link from "@components/Link";
 import * as ROUTES from "@constants/routes";
 import { AuthButton, AuthCol, AuthContent, AuthForm, AuthWrapper, Content, FeaturedButton, FeaturedCol, FeaturedContainer, FeaturedSubtitle, FeaturedTitle, Field, FieldContainer, FieldLabel, HeaderContainer, HeaderDescription, HeaderTitle, Logo, LogoContainer, LogoTitle } from "@components/layout/Auth";
+import WildProvider from '@components/WildProvider';
 
-const SignUp = () => {
+const SignUp: NextPage = () => {
 
     const handleDateBlur = (event) => {
         event.target.type = 'tel';
@@ -54,7 +57,7 @@ const SignUp = () => {
     }
 
     return (
-        <>
+        <WildProvider>
             <Title title="Register" />
             <Content>
                 <FeaturedCol>
@@ -106,7 +109,7 @@ const SignUp = () => {
                     </AuthWrapper>
                 </AuthCol>
             </Content>
-        </>
+        </WildProvider>
     );
 }
 

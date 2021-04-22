@@ -2,12 +2,13 @@ import React from 'react';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { useMutation } from '@apollo/client';
-import gql from 'graphql-tag';
 
 import Title from '@components/Title';
 import Link from "@components/Link";
-import * as ROUTES from "@constants/routes";
+import WildProvider from '@components/WildProvider';
 import { AuthButton, AuthCol, AuthContent, AuthForm, AuthWrapper, Content, FeaturedButton, FeaturedCol, FeaturedContainer, FeaturedSubtitle, FeaturedTitle, Field, FieldContainer, FieldLabel, ForgotPassword, HeaderContainer, HeaderDescription, HeaderTitle, Logo, LogoContainer, LogoTitle } from "@components/layout/Auth";
+
+import * as ROUTES from "@constants/routes";
 import { useForm } from '@hooks/useForm';
 import { AuthContext } from '@context/Auth';
 import { LOGIN_USER } from '@queries/auth';
@@ -43,7 +44,7 @@ const SignIn: NextPage = () => {
     });
 
     return (
-        <>
+        <WildProvider>
             <Title title="Log In" />
             <Content>
                 <FeaturedCol>
@@ -80,7 +81,7 @@ const SignIn: NextPage = () => {
                     </AuthWrapper>
                 </AuthCol>
             </Content>
-        </>
+        </WildProvider>
     );
 }
 

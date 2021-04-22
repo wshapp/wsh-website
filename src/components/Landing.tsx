@@ -4,11 +4,12 @@ import styled from "styled-components";
 import Navbar from "@components/Navbar";
 import Title from '@components/Title';
 import Container from '@components/layout/Container';
+import WildProvider from "./WildProvider";
 
 const Landing: React.FC = () => {
 
     return (
-        <>
+        <WildProvider noRedirect>
             <Title title="The house where you can make friends quickly" />
             <Navbar />
             <BackgroundHeader />
@@ -21,7 +22,7 @@ const Landing: React.FC = () => {
                     </FeaturedContainer>
                 </Container>
             </Content>
-        </>
+        </WildProvider>
     );
 }
 
