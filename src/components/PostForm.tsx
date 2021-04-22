@@ -37,17 +37,16 @@ const PostForm: React.FC = () => {
                 </IconContainer>
                 <Content>
                     <Field
-                        placeholder="Write..."
                         name="body"
                         role="textbox"
                         contentEditable
-                        value={values.body}
                         onInput={onChange}
                         onBlur={onChange}
+                        values={values.body}
                         error={error ? true : false}
                     />
                     <Toolsbar>
-                        <Button type="submit">Send</Button>
+                        <Button type="submit">Post</Button>
                     </Toolsbar>
                 </Content>
             </Form>
@@ -94,29 +93,36 @@ const Content = styled.div`
     flex: 1;
 `;
 
+const FieldContainer = styled.div`
+    display: flex;
+`;
+
 const Field = styled.span`
     resize: none;
     border: none;
     outline: none;
     border-radius: 0;
-    margin-left: 10px;
-    padding: 10px 0;
     font-weight: 500;
     background: transparent;
-    color: ${props => props.theme.colors.text.lightest};
+    color: ${props => props.theme.colors.text.light};
     transition: all 0.2s;
     width: 100%;
     overflow: hidden;
     min-height: 40px;
     line-height: 20px;
-/* 
+    word-break: break-word;
+    padding: 10px 10px;
+    width: calc(100% - 10px * 2);
+
     &:focus {
         color: ${props => props.theme.colors.text.lightest};
-    } */
+    }
 
     &[contenteditable]:empty::before {
-        content: "Placeholder still possible";
+        content: "Write...";
         color: ${props => props.theme.colors.text.light};
+        pointer-events: none;
+        user-select: none;
     }
 `;
 
