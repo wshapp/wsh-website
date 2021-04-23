@@ -8,8 +8,13 @@ import House from "@components/House";
 const Main: NextPage = () => {
 
     const { user } = React.useContext(AuthContext);
+    const [state, setState] = React.useState(false)
 
-    return user ? <House /> : <Landing />;
+    React.useEffect(() => {
+        if(user) setState(true);
+    }, []);
+
+    return state ? <House /> : <Landing />;
 }
 
 export default Main;
