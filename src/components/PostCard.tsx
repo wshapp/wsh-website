@@ -1,11 +1,16 @@
+import React from "react";
 import styled from "styled-components";
 import moment from 'moment';
+import Link from "./Link";
+import PostReactionLike from "./PostReactionLike";
+import { AuthContext } from "@context/Auth";
 
 interface PostCardPost {
     post: any;
 }
 
 const PostCard: React.FC<PostCardPost> = ({ post: { body, createdAt, id, username, likeCount, commentCount, likes } }) => {
+    const { user } = React.useContext(AuthContext);
 
     return (
         <Container>
@@ -23,11 +28,9 @@ const PostCard: React.FC<PostCardPost> = ({ post: { body, createdAt, id, usernam
             </Content>
             <Footer>
                 <Reaction>
-                    <ReactionIcon className="ri-message-3-line" /> {commentCount}
+                    <ReactionIcon className="ri-message-3-line" as={Link} href={`/p/${id}`} /> {commentCount}
                 </Reaction>
-                <Reaction>
-                    <ReactionIcon className="ri-heart-3-line" /> {likeCount}
-                </Reaction>
+                <Reaction as={PostReactionLike} user={user} post={{ id, likes, likeCount }} />
             </Footer>
         </Container>
     )
