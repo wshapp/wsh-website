@@ -85,6 +85,7 @@ const Date = styled.p`
 
 const Content = styled.div`
     margin-top: 15px;
+    line-height: 1.2;
 `;
 
 const Footer = styled.div`

@@ -109,7 +109,7 @@ const Field = styled.span`
     width: 100%;
     overflow: hidden;
     min-height: 40px;
-    line-height: 20px;
+    line-height: 1.2;
     word-break: break-word;
     padding: 10px 10px;
     width: calc(100% - 10px * 2);
