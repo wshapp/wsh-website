@@ -63,7 +63,8 @@ const Nav = styled.ul`
     
     @media (max-width: 768px) {
         flex-direction: row;
-        margin: 0 auto;
+        justify-content: space-evenly;
+        margin: 0;
     }
 `;
 

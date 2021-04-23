@@ -32,6 +32,9 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
     width: calc(100% - 75px * 2);
+    @media (max-width: 768px) {
+        width: 100%;
+    }
 `;
 
 const Content = styled.div`
