@@ -1,15 +1,14 @@
+import moment from "moment";
 import React from "react";
 import styled from "styled-components";
-import moment from 'moment';
-import Link from "./Link";
 import PostReactionLike from "./PostReactionLike";
 import { AuthContext } from "@context/Auth";
 
-interface FeedCardPost {
+interface Post {
     post: any;
 }
 
-const FeedCard: React.FC<FeedCardPost> = ({ post: { body, createdAt, id, username, likeCount, commentCount, likes } }) => {
+const PostCard: React.FC<Post> = ({ post: { body, createdAt, id, username, likeCount, commentCount, likes } }) => {
     const { user } = React.useContext(AuthContext);
 
     return (
@@ -19,47 +18,51 @@ const FeedCard: React.FC<FeedCardPost> = ({ post: { body, createdAt, id, usernam
                     <Icon src={`https://picsum.photos/200/200`} loading="lazy" />
                 </IconContainer>
                 <HeaderContent>
-                    <Username>{username}</Username>
-                    <Date>{moment(createdAt).fromNow(true)}</Date>
+                    <HeaderContentCol>
+                        <Username>{username}</Username>
+                        <Date>{moment(createdAt).fromNow(true)}</Date>
+                    </HeaderContentCol>
+                    <HeaderContentCol>
+                        <ReactionContainer>
+                            <Reaction as={PostReactionLike} user={user} post={{ id, likes, likeCount }} />
+                            <Reaction>
+                                <ReactionIcon className="ri-message-3-line" /> {commentCount}
+                            </Reaction>
+                            <Reaction>
+                                <ReactionIcon className="ri-share-forward-line" /> Share
+                            </Reaction>
+                        </ReactionContainer>
+                    </HeaderContentCol>
                 </HeaderContent>
             </Header>
-            <Content>
-                {body}
-            </Content>
-            <Footer>
-                <Reaction as={PostReactionLike} user={user} post={{ id, likes, likeCount }} />
-                <Reaction as={Link} href={`/p/${id}`}>
-                    <ReactionIcon className="ri-message-3-line" /> {commentCount}
-                </Reaction>
-            </Footer>
+            <Content>{body}</Content>
         </Container>
     )
 }
 
 const Container = styled.div`
-    width: calc(100% - 15px * 2);
-	margin: 0 2px 15px;
-	padding: 15px;
-	transition: opacity .4s ease-in-out;
-    display: inline-block;
-    column-break-inside: avoid;
+    display: flex;
+	padding: 15px 0;
+    flex-direction: column;
 `;
 
 const Header = styled.div`
+    margin-top: 15px;
     display: flex;
+    flex: 1;
 `;
 
 const IconContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
 `;
 
 const Icon = styled.img`
-    width: 40px;
-    height: 40px;
+    width: 60px;
+    height: 60px;
     border-radius: 10px;
     object-fit: center;
     user-select: none;
@@ -75,6 +78,11 @@ const HeaderContent = styled.div`
     line-height: 1.2;
 `;
 
+const HeaderContentCol = styled.div`
+    display: flex;
+    flex-direction: column;
+`;
+
 const Username = styled.p`
     font-size: 16px;
     font-weight: 600;
@@ -86,15 +94,8 @@ const Date = styled.p`
     color: ${props => props.theme.colors.text.light};
 `;
 
-const Content = styled.div`
-    margin-top: 15px;
-    line-height: 1.2;
-`;
-
-const Footer = styled.div`
-    margin-top: 15px;
-    display: flex;
-    justify-content: flex-end;
+const ReactionContainer = styled.div`
+    display: flex
 `;
 
 const Reaction = styled.div`
@@ -118,4 +119,9 @@ const ReactionIcon = styled.i`
     font-size: 15px
 `;
 
-export default FeedCard;
+const Content = styled.div`
+    margin-top: 30px;
+    font-size: 24px;
+`;
+
+export default PostCard;
