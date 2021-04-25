@@ -103,6 +103,7 @@ const Reaction = styled.div`
     align-items: center;
     font-size: 11px;
     cursor: pointer;
+    user-select: none;
     
     &:first-child {
         margin-left: 0
