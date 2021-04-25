@@ -7,7 +7,7 @@ import { CREATE_POST, GET_POSTS } from '@queries/posts';
 import { Button } from "./layout/Buttons";
 
 
-const PostForm: React.FC = () => {
+const FeedForm: React.FC = () => {
 
     const createPostCallback = () => {
         createPost();
@@ -93,10 +93,6 @@ const Content = styled.div`
     flex: 1;
 `;
 
-const FieldContainer = styled.div`
-    display: flex;
-`;
-
 const Field = styled.span`
     resize: none;
     border: none;
@@ -131,4 +127,4 @@ const Toolsbar = styled.div`
     justify-content: flex-end;
 `
 
-export default PostForm;
+export default FeedForm;

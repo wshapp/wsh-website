@@ -7,7 +7,7 @@ import Sidebar from "@components/Sidebar";
 import SideNavbar from "@components/SideNavbar";
 import Title from "@components/Title";
 import { GET_POSTS } from "@queries/posts";
-import PostsFeed from "@components/PostsFeed";
+import Feed from "@components/Feed";
 
 const House: React.FC = () => {
 
@@ -25,7 +25,7 @@ const House: React.FC = () => {
                     <SafeContent>
                         {loading ? (
                             <h1>Loading posts..</h1>
-                        ) : (data?.getPosts && <PostsFeed posts={data?.getPosts} />)}
+                        ) : (data?.getPosts && <Feed posts={data?.getPosts} />)}
                     </SafeContent>
                 </SafeContentBackground>
                 <Sidebar>

@@ -5,11 +5,11 @@ import Link from "./Link";
 import PostReactionLike from "./PostReactionLike";
 import { AuthContext } from "@context/Auth";
 
-interface PostCardPost {
+interface FeedCardPost {
     post: any;
 }
 
-const PostCard: React.FC<PostCardPost> = ({ post: { body, createdAt, id, username, likeCount, commentCount, likes } }) => {
+const FeedCard: React.FC<FeedCardPost> = ({ post: { body, createdAt, id, username, likeCount, commentCount, likes } }) => {
     const { user } = React.useContext(AuthContext);
 
     return (
@@ -27,8 +27,8 @@ const PostCard: React.FC<PostCardPost> = ({ post: { body, createdAt, id, usernam
                 {body}
             </Content>
             <Footer>
-                <Reaction>
-                    <ReactionIcon className="ri-message-3-line" as={Link} href={`/p/${id}`} /> {commentCount}
+                <Reaction as={Link} href={`/p/${id}`}>
+                    <ReactionIcon className="ri-message-3-line" /> {commentCount}
                 </Reaction>
                 <Reaction as={PostReactionLike} user={user} post={{ id, likes, likeCount }} />
             </Footer>
@@ -118,4 +118,4 @@ const ReactionIcon = styled.i`
     font-size: 15px
 `;
 
-export default PostCard;
+export default FeedCard;

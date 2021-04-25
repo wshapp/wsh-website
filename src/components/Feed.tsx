@@ -1,19 +1,19 @@
 import styled from "styled-components";
-import PostCard from "./PostCard";
-import PostForm from "./PostForm";
+import FeedCard from "./FeedCard";
+import PostForm from "./FeedForm";
 
-interface PostsFeedProps {
+interface FeedProps {
     posts: any
 }
 
-const PostsFeed: React.FC<PostsFeedProps> = ({ posts }) => (
+const Feed: React.FC<FeedProps> = ({ posts }) => (
     <Container>
         <Wrapper>
             <Content>
                 <PostForm />
                 {posts &&
                     posts.map((post) => (
-                        <PostCard post={post} key={post.id} />
+                        <FeedCard post={post} key={post.id} />
                     ))
                 }
             </Content>
@@ -27,7 +27,6 @@ const Container = styled.div`
     overflow: auto;
     flex: 1;
     align-items: center;
-    overflow: auto;
 `;
 
 const Wrapper = styled.div`
@@ -40,9 +39,9 @@ const Wrapper = styled.div`
 const Content = styled.div`
     column-width: 500px;
 	column-gap: 15px;
- 	width: 90%;
+ 	width: 100%;
 	max-width: 1100px;
 	margin: 50px auto;
 `;
 
-export default PostsFeed;
+export default Feed;
