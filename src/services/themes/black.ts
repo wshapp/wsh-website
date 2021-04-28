@@ -17,10 +17,10 @@ export default {
             darker: 'rgb(100, 100, 100)'
         },
         accent: {
-            light: 'rgb(67, 181, 147)',
-            lightShadow: 'rgb(67 181 147 / 70%)',
-            dark: 'rgb(255, 121, 198)',
-            darkShadow: 'rgb(255 121 198 / 70%)'
+            light: 'rgb(255, 201, 58)',
+            lightShadow: 'rgb(255 201 58 / 70%)',
+            dark: 'rgb(213, 141, 0)',
+            darkShadow: 'rgb(213 141 0 / 70%)'
         }
     }
 }
