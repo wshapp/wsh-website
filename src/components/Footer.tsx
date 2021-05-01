@@ -16,12 +16,13 @@ const Footer = () => (
 );
 
 const Container = styled.div`
+    margin-top: 30px;
     padding: 15px;
-    background-color: ${props => props.theme.colors.layout.darker};
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    user-select: none;
 `;
 
 const Nav = styled.ul`

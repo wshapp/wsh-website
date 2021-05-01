@@ -37,7 +37,8 @@ const Landing: NextPage = () => {
                     </FeaturedContainer>
                     <ScrollButton onClick={handleScrollClick}><i className="ri-mouse-line"></i> Discover how it works</ScrollButton>
                     <SpecContainer>
-
+                        <SpecTitle>Talk, meet, watch, record. Together</SpecTitle>
+                        <SpecDescription>Find the best features of your favorite social networks. Imagine that you can import your photos, your friends to finally use a single social network that brings together your favorite functionality.</SpecDescription>
                     </SpecContainer>
                 </Container>
             </Content>
@@ -134,6 +135,7 @@ const ScrollButton = styled.div`
     color: ${props => props.theme.colors.text.light};
     cursor: pointer;
     margin-right: auto;
+    user-select: none;
 
     i {
         margin-right: 5px;
@@ -142,6 +144,19 @@ const ScrollButton = styled.div`
 
 const SpecContainer = styled.div`
     display: flex;
+    flex-direction: column;
+`;
+
+const SpecTitle = styled.h2`
+    margin-top: 100px;
+    font-size: 28px;
+    font-weight: 600;
+`;
+
+const SpecDescription = styled.p`
+    margin-top: 30px;
+    font-size: 18px;
+    color: ${props => props.theme.colors.text.light};
 `;
 
 export default Landing;
