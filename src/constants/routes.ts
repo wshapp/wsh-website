@@ -1,4 +1,8 @@
 export const LANDING = '/';
+export const DOWNLOAD = '/download';
+export const TERMS = '/terms';
+export const FAQ = '/faq';
+export const SUPPORT = '/support';
 
 export const SIGN_IN = '/auth';
 export const SIGN_UP = '/auth/register';

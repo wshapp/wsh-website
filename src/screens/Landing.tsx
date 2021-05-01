@@ -9,6 +9,7 @@ import WildProvider from "@components/WildProvider";
 import * as ROUTES from "@constants/routes";
 import { Button } from "@components/layout/Buttons";
 import Link from "@components/Link";
+import Footer from "@components/Footer";
 
 const Landing: NextPage = () => {
 
@@ -40,6 +41,7 @@ const Landing: NextPage = () => {
                     </SpecContainer>
                 </Container>
             </Content>
+            <Footer />
         </WildProvider>
     );
 }
