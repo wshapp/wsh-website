@@ -34,7 +34,7 @@ export default class MyDocument extends Document {
                 <Head>
                     <link
                         rel="dns-prefetch"
-                        href="//fonts.googleapis.com"
+                        href="https://fonts.googleapis.com"
                     />
                     <link
                         rel="preconnect"
