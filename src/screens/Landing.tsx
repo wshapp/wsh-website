@@ -5,9 +5,16 @@ import { NextPage } from "next";
 import Navbar from "@components/Navbar";
 import Title from '@components/Title';
 import Container from '@components/layout/Container';
-import WildProvider from "../components/WildProvider";
+import WildProvider from "@components/WildProvider";
+import * as ROUTES from "@constants/routes";
+import { Button } from "@components/layout/Buttons";
+import Link from "@components/Link";
 
 const Landing: NextPage = () => {
+
+    const handleScrollClick = () => {
+        console.log("ok");
+    }
 
     return (
         <WildProvider>
@@ -17,10 +24,20 @@ const Landing: NextPage = () => {
             <Content>
                 <Container>
                     <FeaturedContainer>
-                        <FeaturedTitle>wsh - Closed Alpha Release</FeaturedTitle>
-                        <FeaturedSubtitle>The house where you can make friends quickly</FeaturedSubtitle>
-                        <FeaturedDescription>Wsh connects you with new friends by audio, discover another communication approach</FeaturedDescription>
+                        <FeaturedTextContainer>
+                            <FeaturedTitle>wsh - Closed Alpha Release</FeaturedTitle>
+                            <FeaturedSubtitle>The house where you can make friends quickly</FeaturedSubtitle>
+                            <FeaturedDescription>Wsh connects you with new friends by audio, discover another communication approach</FeaturedDescription>
+                            <FeaturedButton href={ROUTES.SIGN_IN} as={Link}>Start Now</FeaturedButton>
+                        </FeaturedTextContainer>
+                        <FeaturedMockupContainer>
+                            <FeaturedMockup src="/static/images/landing-mockup.png" />
+                        </FeaturedMockupContainer>
                     </FeaturedContainer>
+                    <ScrollButton onClick={handleScrollClick}><i className="ri-mouse-line"></i> Discover how it works</ScrollButton>
+                    <SpecContainer>
+
+                    </SpecContainer>
                 </Container>
             </Content>
         </WildProvider>
@@ -48,10 +65,24 @@ const Content = styled.div`
 `;
 
 const FeaturedContainer = styled.div`
-    max-width: 400px;
-    text-align: center;
-    margin: 100px auto 0;
+    display: flex;
     user-select: none;
+    align-items: center;
+    min-height: calc(100vh - 60px * 2);
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        margin-top: 30px;
+        height: auto;
+    }
+`;
+
+const FeaturedTextContainer = styled.div`
+    flex: 1 35%;
+
+    @media (max-width: 768px) {
+        text-align: center;
+    }
 `;
 
 const FeaturedTitle = styled.h1`
@@ -63,13 +94,52 @@ const FeaturedTitle = styled.h1`
 const FeaturedSubtitle = styled.h2`
     margin-top: 15px;
     font-weight: 700;
-    font-size: 28px;
+    font-size: 32px;
     line-height: 1.5;
 `;
 
 const FeaturedDescription = styled.p`
-    margin-top: 5px;
+    margin-top: 30px;
+    line-height: 1.5;
     color: ${props => props.theme.colors.text.light};
+`;
+
+const FeaturedButton = styled(Button)`
+    margin-top: 30px;
+    margin-left: 10%;
+    display: inline-block;
+    padding: 12px 26px;
+    
+    @media (max-width: 768px) {
+        margin-left: 0;
+    }
+`;
+
+const FeaturedMockupContainer = styled.div`
+    flex: 1 65%;
+    pointer-events: none;
+`;
+
+const FeaturedMockup = styled.img`
+    max-width: 100%;
+    height: auto;
+`;
+
+const ScrollButton = styled.div`
+    height: 60px;
+    align-items: center;
+    display: flex;
+    color: ${props => props.theme.colors.text.light};
+    cursor: pointer;
+    margin-right: auto;
+
+    i {
+        margin-right: 5px;
+    }
+`;
+
+const SpecContainer = styled.div`
+    display: flex;
 `;
 
 export default Landing;
