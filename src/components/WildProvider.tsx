@@ -10,7 +10,7 @@ const WildProvider: React.FC<{ noRedirect?: boolean }> = ({ children, noRedirect
     const router = useRouter();
 
     React.useEffect(() => {
-        if (user && !noRedirect) router.push(ROUTES.INDEX)
+        if (user && !noRedirect) router.push(ROUTES.HOUSE)
     }, []);
 
     return user ? <Loading /> : <>{children}</>;

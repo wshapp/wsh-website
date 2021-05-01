@@ -12,12 +12,12 @@ const SideNavbar: React.FC = () => {
 
     return (
         <Container>
-            <Link href={ROUTES.INDEX}>
+            <Link href={ROUTES.HOUSE}>
                 <Logo />
             </Link>
             <Nav>
                 <NavItem>
-                    <NavLink href={ROUTES.INDEX}><Icon className={pathname === ROUTES.INDEX ? 'ri-home-4-fill active' : 'ri-home-4-line'} /></NavLink>
+                    <NavLink href={ROUTES.HOUSE}><Icon className={pathname === ROUTES.HOUSE ? 'ri-home-4-fill active' : 'ri-home-4-line'} /></NavLink>
                 </NavItem>
                 <NavItem>
                     <NavLink href={ROUTES.MESSAGES}><Icon className={pathname.includes(ROUTES.MESSAGES) ? 'ri-chat-1-fill active' : 'ri-chat-1-line'} /></NavLink>

@@ -10,7 +10,7 @@ const SafeProvider: React.FC<{ noRedirect?: boolean }> = ({ children, noRedirect
     const router = useRouter();
 
     React.useEffect(() => {
-        if (!user && !noRedirect) router.push(ROUTES.INDEX)
+        if (!user && !noRedirect) router.push(ROUTES.LANDING)
     }, []);
 
     return user ? <>{children}</> : <Loading />;

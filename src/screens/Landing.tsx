@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "styled-components";
+import { NextPage } from "next";
 
 import Navbar from "@components/Navbar";
 import Title from '@components/Title';
 import Container from '@components/layout/Container';
-import WildProvider from "./WildProvider";
+import WildProvider from "../components/WildProvider";
 
-const Landing: React.FC = () => {
+const Landing: NextPage = () => {
 
     return (
         <WildProvider>

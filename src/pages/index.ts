@@ -1,3 +1,3 @@
-import Main from '@screens/Main';
+import Landing from '@screens/Landing';
 
-export default Main;
+export default Landing;

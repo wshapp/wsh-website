@@ -1,5 +1,6 @@
 import React from "react";
 import { useQuery } from '@apollo/react-hooks';
+import { NextPage } from "next";
 
 import { SafeContainer, SafeContent, SafeContentBackground } from "@components/layout/Safe";
 import SafeProvider from "@components/SafeProvider";
@@ -9,7 +10,7 @@ import Title from "@components/Title";
 import { GET_POSTS } from "@queries/posts";
 import Feed from "@components/Feed";
 
-const House: React.FC = () => {
+const House: NextPage = () => {
 
     const {
         loading,
@@ -17,7 +18,7 @@ const House: React.FC = () => {
     }: { loading: any; data?: any } = useQuery(GET_POSTS);
 
     return (
-        <SafeProvider noRedirect>
+        <SafeProvider>
             <Title title="House" />
             <SafeContainer>
                 <SideNavbar />

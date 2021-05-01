@@ -8,7 +8,7 @@ import { WshLogo } from "./layout/Icons";
 const Navbar = () => (
     <NavbarContainer>
         <Nav>
-            <NavItem><Link href={ROUTES.INDEX}><WshLogo /></Link></NavItem>
+            <NavItem><Link href={ROUTES.LANDING}><WshLogo /></Link></NavItem>
             <NavItem><Button href={ROUTES.SIGN_IN} as={Link}>Log In</Button></NavItem>
         </Nav>
     </NavbarContainer>
