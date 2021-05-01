@@ -33,6 +33,10 @@ export default class MyDocument extends Document {
             <Html>
                 <Head>
                     <link
+                        rel="dns-prefetch"
+                        href="//fonts.googleapis.com"
+                    />
+                    <link
                         rel="preconnect"
                         href="https://fonts.gstatic.com"
                         crossOrigin="true"
