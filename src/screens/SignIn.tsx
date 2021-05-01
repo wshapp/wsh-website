@@ -35,7 +35,7 @@ const SignIn: NextPage = () => {
             }
         ) {
             context.login(userData);
-            router.push('/');
+            router.push(ROUTES.HOUSE);
         },
         onError(err) {
             setErrors(err.graphQLErrors[0].extensions.exception.errors);
