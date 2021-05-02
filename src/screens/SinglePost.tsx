@@ -16,8 +16,7 @@ import PostCard from "@components/PostCard";
 
 const SinglePost: NextPage = () => {
     const router = useRouter();
-    const id = router.query.id?.toString();
-    const { user } = React.useContext(AuthContext);
+    const { id } = router.query;
     const {
         loading,
         data
