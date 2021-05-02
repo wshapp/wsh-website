@@ -19,6 +19,10 @@ export default createGlobalStyle`
         color: ${props => props.theme.colors.text.lightest};
     }
 
+    html {
+        scroll-behavior: smooth;
+    }
+
     body {
         scrollbar-color: rgba(0, 0, 0, .6) rgba(0, 0, 0, .3);
     }

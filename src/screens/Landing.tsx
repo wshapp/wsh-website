@@ -13,9 +13,9 @@ import Footer from "@components/Footer";
 
 const Landing: NextPage = () => {
 
-    const handleScrollClick = () => {
-        console.log("ok");
-    }
+    const SpecRef = React.useRef<HTMLDivElement>();
+
+    const handleScrollClick = () => SpecRef.current.scrollIntoView();
 
     return (
         <WildProvider>
@@ -36,7 +36,7 @@ const Landing: NextPage = () => {
                         </FeaturedMockupContainer>
                     </FeaturedContainer>
                     <ScrollButton onClick={handleScrollClick}><i className="ri-mouse-line"></i> Discover how it works</ScrollButton>
-                    <SpecContainer>
+                    <SpecContainer ref={SpecRef}>
                         <SpecTitle>Talk, meet, watch, record. Together</SpecTitle>
                         <SpecDescription>Find the best features of your favorite social networks. Imagine that you can import your photos, your friends to finally use a single social network that brings together your favorite functionality.</SpecDescription>
                     </SpecContainer>

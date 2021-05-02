@@ -23,6 +23,7 @@ const Container = styled.div`
     align-items: center;
     text-align: center;
     user-select: none;
+    color: ${props => props.theme.colors.text.light};
 `;
 
 const Nav = styled.ul`
