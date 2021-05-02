@@ -37,8 +37,13 @@ const Landing: NextPage = () => {
                     </FeaturedContainer>
                     <ScrollButton onClick={handleScrollClick}><i className="ri-mouse-line"></i> Discover how it works</ScrollButton>
                     <SpecContainer ref={SpecRef}>
-                        <SpecTitle>Talk, meet, watch, record. Together</SpecTitle>
-                        <SpecDescription>Find the best features of your favorite social networks. Imagine that you can import your photos, your friends to finally use a single social network that brings together your favorite functionality.</SpecDescription>
+                        <SpecTextContainer>
+                            <SpecTitle>Talk, meet, watch, record. Together</SpecTitle>
+                            <SpecDescription>Find the best features of your favorite social networks. Imagine that you can import your photos, your friends to finally use a single social network that brings together your favorite functionality.</SpecDescription>
+                        </SpecTextContainer>
+                        <SpecImageContainer>
+                            <SpecImage src="/static/images/landing-follows.png" />
+                        </SpecImageContainer>
                     </SpecContainer>
                 </Container>
             </Content>
@@ -144,7 +149,16 @@ const ScrollButton = styled.div`
 
 const SpecContainer = styled.div`
     display: flex;
-    flex-direction: column;
+    min-height: calc(100vh - 60px * 2);
+    user-select: none;
+`;
+
+const SpecTextContainer = styled.div`
+    flex: 1 65%;
+
+    @media (max-width: 768px) {
+        text-align: center;
+    }
 `;
 
 const SpecTitle = styled.h2`
@@ -157,6 +171,17 @@ const SpecDescription = styled.p`
     margin-top: 30px;
     font-size: 18px;
     color: ${props => props.theme.colors.text.light};
+`;
+
+const SpecImageContainer = styled.div`
+    flex: 1 35%;
+    pointer-events: none;
+    margin: 100px 0;
+`;
+
+const SpecImage = styled.img`
+    max-width: 100%;
+    height: auto;
 `;
 
 export default Landing;
