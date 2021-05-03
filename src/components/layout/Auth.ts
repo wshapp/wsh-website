@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
-import { WshLogo } from "@components/layout/Icons";
-import Link from "@components/Link";
+import { WshLogo } from "./Icons";
+import Link from "../Link";
 import { Button } from "./Buttons";
 
 export const Content = styled.div`

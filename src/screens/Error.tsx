@@ -1,19 +1,14 @@
-import Link from "@components/Link";
+import Link from "../components/Link";
 import styled from "styled-components";
-import * as ROUTES from "@constants/routes";
+import * as ROUTES from "../constants/routes";
 
-const Error = ({ statusCode }) => {
+const Error: React.FC = () => {
     return (
         <Container>
             <Title>Sorry, this page isn't available.</Title>
             <Description>The link you followed may be broken, or the page may have been removed. Go back to <Link href={ROUTES.LANDING}>wsh</Link>.</Description>
         </Container>
     )
-}
-
-Error.getInitialProps = ({ res, err }) => {
-    const statusCode = res ? res.statusCode : err ? err.statusCode : 404
-    return { statusCode }
 }
 
 const Container = styled.div`

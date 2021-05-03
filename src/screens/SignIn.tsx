@@ -1,21 +1,20 @@
-import React from 'react';
-import { NextPage } from 'next';
-import { useRouter } from 'next/router';
-import { useMutation } from '@apollo/client';
+import React from "react";
+import { useMutation } from "@apollo/client";
+import { useHistory } from "react-router-dom";
 
-import Title from '@components/Title';
-import Link from "@components/Link";
-import WildProvider from '@components/WildProvider';
-import { AuthButton, AuthCol, AuthContent, AuthForm, AuthWrapper, Content, FeaturedButton, FeaturedCol, FeaturedContainer, FeaturedSubtitle, FeaturedTitle, Field, FieldContainer, FieldLabel, ForgotPassword, HeaderContainer, HeaderDescription, HeaderTitle, Logo, LogoContainer, LogoTitle } from "@components/layout/Auth";
+import Title from "../components/Title";
+import Link from "../components/Link";
+import WildProvider from "../components/WildProvider";
+import { AuthButton, AuthCol, AuthContent, AuthForm, AuthWrapper, Content, FeaturedButton, FeaturedCol, FeaturedContainer, FeaturedSubtitle, FeaturedTitle, Field, FieldContainer, FieldLabel, ForgotPassword, HeaderContainer, HeaderDescription, HeaderTitle, Logo, LogoContainer, LogoTitle } from "../components/layout/Auth";
 
-import * as ROUTES from "@constants/routes";
-import { useForm } from '@hooks/useForm';
-import { AuthContext } from '@context/Auth';
-import { LOGIN_USER } from '@queries/auth';
+import * as ROUTES from "../constants/routes";
+import { useForm } from "../hooks/useForm";
+import { AuthContext } from "../context/Auth";
+import { LOGIN_USER } from "../queries/auth";
 
-const SignIn: NextPage = () => {
+const SignIn: React.FC = () => {
 
-    const router = useRouter();
+    const history = useHistory();
 
     const context = React.useContext(AuthContext);
     const [errors, setErrors] = React.useState({})
@@ -35,7 +34,7 @@ const SignIn: NextPage = () => {
             }
         ) {
             context.login(userData);
-            router.push(ROUTES.HOUSE);
+            history.push(ROUTES.HOUSE);
         },
         onError(err) {
             setErrors(err.graphQLErrors[0].extensions.exception.errors);

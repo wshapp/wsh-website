@@ -1,7 +1,7 @@
 import { useMutation } from "@apollo/react-hooks";
 import React from "react";
 import styled from "styled-components";
-import { POST_LIKE } from "@queries/posts";
+import { POST_LIKE } from "../queries/posts";
 
 interface PostLikeButtonProps {
     user: any;

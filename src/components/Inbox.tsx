@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import InboxItem from "./InboxItem";
-import * as ROUTES from "@constants/routes";
+import * as ROUTES from "../constants/routes";
 import Link from "./Link";
 
 const Inbox: React.FC = () => {

@@ -1,16 +1,18 @@
 import React from "react";
-import { useRouter } from "next/router";
+import { useHistory } from "react-router-dom";
 
-import { AuthContext } from "@context/Auth";
-import * as ROUTES from "@constants/routes";
-import Loading from "@components/Loading";
+import { AuthContext } from "../context/Auth";
+import * as ROUTES from "../constants/routes";
+import Loading from "./Loading";
 
-const WildProvider: React.FC<{ noRedirect?: boolean }> = ({ children, noRedirect = false }) => {
+interface WildProviderProps { noRedirect?: boolean; }
+
+const WildProvider: React.FC<WildProviderProps> = ({ children, noRedirect = false }) => {
     const { user } = React.useContext(AuthContext);
-    const router = useRouter();
+    const history = useHistory();
 
     React.useEffect(() => {
-        if (user && !noRedirect) router.push(ROUTES.HOUSE)
+        if (user && !noRedirect) history.push(ROUTES.HOUSE);
     }, []);
 
     return user ? <Loading /> : <>{children}</>;

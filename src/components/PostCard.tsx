@@ -2,7 +2,7 @@ import moment from "moment";
 import React from "react";
 import styled from "styled-components";
 import PostReactionLike from "./PostReactionLike";
-import { AuthContext } from "@context/Auth";
+import { AuthContext } from "../context/Auth";
 
 interface Post {
     post: any;

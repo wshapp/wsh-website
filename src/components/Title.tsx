@@ -1,11 +1,15 @@
-import Head from 'next/head';
+import { Helmet } from "react-helmet";
+import { APPNAME } from '../constants/main';
 
-import { APPNAME } from '@constants/main';
+interface TitleProps {
+    title: string;
+    subtitle?: string
+}
 
-const Title = ({ title, subtitle }: { title: string; subtitle?: string }) => (
-    <Head>
+const Title: React.FC<TitleProps> = ({ title, subtitle }) => (
+    <Helmet>
         <title>{`${subtitle ? subtitle + ' - ' : ''}${title} | ${APPNAME}`}</title>
-    </Head>
+    </Helmet>
 );
 
 export default Title;

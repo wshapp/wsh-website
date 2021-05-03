@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
-import Link from "@components/Link";
-import * as ROUTES from "@constants/routes";
+import Link from "./Link";
+import * as ROUTES from "../constants/routes";
 
-const Footer = () => (
+const Footer: React.FC = () => (
     <Container>
         <Nav>
             <NavItem><Link href={ROUTES.DOWNLOAD}>Download</Link></NavItem>

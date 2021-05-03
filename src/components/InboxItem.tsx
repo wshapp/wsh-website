@@ -1,8 +1,8 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import styled from "styled-components";
-import { useRouter } from "next/router";
 
-import * as ROUTES from "@constants/routes";
+import * as ROUTES from "../constants/routes";
 
 interface InboxItemProps {
     id: number
@@ -10,11 +10,11 @@ interface InboxItemProps {
 
 const InboxItem: React.FC<InboxItemProps> = ({ id }) => {
 
-    const router = useRouter();
+    const history = useHistory();
 
     const handleClick = (event) => {
         event.preventDefault();
-        router.push(`${ROUTES.MESSAGES}/${id}`)
+        history.push(`${ROUTES.MESSAGES}/${id}`)
     }
 
     return (

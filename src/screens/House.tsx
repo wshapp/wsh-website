@@ -1,16 +1,15 @@
 import React from "react";
 import { useQuery } from '@apollo/react-hooks';
-import { NextPage } from "next";
 
-import { SafeContainer, SafeContent, SafeContentBackground } from "@components/layout/Safe";
-import SafeProvider from "@components/SafeProvider";
-import Sidebar from "@components/Sidebar";
-import SideNavbar from "@components/SideNavbar";
-import Title from "@components/Title";
-import { GET_POSTS } from "@queries/posts";
-import Feed from "@components/Feed";
+import { SafeContainer, SafeContent, SafeContentBackground } from "../components/layout/Safe";
+import SafeProvider from "../components/SafeProvider";
+import Sidebar from "../components/Sidebar";
+import SideNavbar from "../components/SideNavbar";
+import Title from "../components/Title";
+import { GET_POSTS } from "../queries/posts";
+import Feed from "../components/Feed";
 
-const House: NextPage = () => {
+const House: React.FC = () => {
 
     const {
         loading,
