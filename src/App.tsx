@@ -20,6 +20,7 @@ import RecoveryChange from "./screens/RecoveryChange";
 import House from "./screens/House";
 import Settings from "./screens/Settings";
 import Messages from "./screens/Messages";
+import Error from "./screens/Error";
 
 import "remixicon/fonts/remixicon.css";
 import "./styles/app.scss";
@@ -44,8 +45,7 @@ const App: React.FC = () => {
             <MainLayout>
               <Router>
                 <Switch>
-                  <Route exact path={ROUTES.MESSAGES + "/:id"} component={Messages} />
-                  <Route path={ROUTES.MESSAGES} component={Messages} />
+                  <Route path={ROUTES.MESSAGES + "/:id?"} component={Messages} />
 
                   <Route exact path={"/p/:id"} component={Post} />
 
@@ -58,7 +58,9 @@ const App: React.FC = () => {
 
                   <Route path={ROUTES.HOUSE} component={House} />
                   <Route exact path={ROUTES.LANDING} component={Landing} />
-                  <Route path="*" component={Error} />
+                  
+                  <Route exact path="/error" component={Error} />
+                  <Route component={Error} />
                 </Switch>
               </Router>
             </MainLayout>
