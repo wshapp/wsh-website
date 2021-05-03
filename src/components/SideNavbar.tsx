@@ -1,14 +1,14 @@
 import React from "react";
 import styled from "styled-components";
-import { useRouter } from "next/router";
+import { useLocation } from "react-router-dom";
 
 import { WshLogo } from "./layout/Icons";
 import Link from "./Link";
-import * as ROUTES from "@constants/routes";
+import * as ROUTES from "../constants/routes";
 
 const SideNavbar: React.FC = () => {
 
-    const { pathname } = useRouter();
+    const { pathname } = useLocation();
 
     return (
         <Container>

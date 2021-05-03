@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import ChannelHeader from "./ChannelHeader";
 import Infobar from "./Infobar";
 
 const ChannelEmpty: React.FC = () => (

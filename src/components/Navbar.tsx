@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
-import Link from "@components/Link";
+import Link from "./Link";
 import { Button } from "./layout/Buttons";
-import * as ROUTES from "@constants/routes";
+import * as ROUTES from "../constants/routes";
 import { WshLogo } from "./layout/Icons";
 
 const Navbar = () => (

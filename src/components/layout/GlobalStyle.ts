@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components";
 export default createGlobalStyle`
     html,
     body,
-    #__next {
+    #root {
         height: 100%;
         background-color: ${props => props.theme.colors.layout.darkest};
     }

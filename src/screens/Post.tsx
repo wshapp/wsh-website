@@ -1,22 +1,19 @@
-import React from "react";
-import { NextPage } from "next";
 import styled from "styled-components";
+import { useParams } from "react-router";
 
-import Title from "@components/Title";
-import { useRouter } from "next/router";
-import { AuthContext } from "@context/Auth";
+import Title from "../components/Title";
 import { useQuery } from "@apollo/client";
-import { GET_POST } from "@queries/posts";
-import SafeProvider from "@components/SafeProvider";
-import { SafeContainer, SafeContent, SafeContentBackground } from "@components/layout/Safe";
-import SideNavbar from "@components/SideNavbar";
-import Sidebar from "@components/Sidebar";
-import { Button } from "@components/layout/Buttons";
-import PostCard from "@components/PostCard";
+import { GET_POST } from "../queries/posts";
+import SafeProvider from "../components/SafeProvider";
+import { SafeContainer, SafeContent, SafeContentBackground } from "../components/layout/Safe";
+import SideNavbar from "../components/SideNavbar";
+import Sidebar from "../components/Sidebar";
+import { Button } from "../components/layout/Buttons";
+import PostCard from "../components/PostCard";
 
-const SinglePost: NextPage = () => {
-    const router = useRouter();
-    const { id } = router.query;
+const SinglePost: React.FC = () => {
+    const { id } = useParams();
+
     const {
         loading,
         data
@@ -35,7 +32,7 @@ const SinglePost: NextPage = () => {
                     <SafeContent>
                         <Container>
                             <Content>
-                                <Button onClick={() => { router.back() }}>Back</Button>
+                                <Button onClick={() => { history.back() }}>Back</Button>
                                 {loading ? (
                                     <h1>Loading post..</h1>
                                 ) : (data?.getPost && <PostCard post={data.getPost} />)}

@@ -1,15 +1,16 @@
 import React from 'react';
-import NextHead from 'next/head';
-import { APPNAME } from '@constants/main';
+import { Helmet } from "react-helmet";
 
-const Head = () => {
+import { APPNAME } from '../constants/main';
+
+const Head: React.FC = () => {
 
     return (
-        <NextHead>
+        <Helmet>
             <title>{APPNAME}</title>
-        </NextHead>
+        </Helmet>
     )
 }
 
 
-export default Head
+export default Head;

@@ -1,9 +1,9 @@
-import Title from '@components/Title';
-import Link from "@components/Link";
-import * as ROUTES from "@constants/routes";
-import { AuthButton, AuthCol, AuthContent, AuthForm, AuthWrapper, Content, FeaturedButton, FeaturedCol, FeaturedContainer, FeaturedSubtitle, FeaturedTitle, Field, FieldContainer, FieldLabel, ForgotPassword, HeaderContainer, HeaderDescription, HeaderTitle, Logo, LogoContainer, LogoTitle } from "@components/layout/Auth";
+import Title from '../components/Title';
+import Link from "../components/Link";
+import * as ROUTES from "../constants/routes";
+import { AuthButton, AuthCol, AuthContent, AuthForm, AuthWrapper, Content, FeaturedButton, FeaturedCol, FeaturedContainer, FeaturedSubtitle, FeaturedTitle, Field, FieldContainer, FieldLabel, ForgotPassword, HeaderContainer, HeaderDescription, HeaderTitle, Logo, LogoContainer, LogoTitle } from "../components/layout/Auth";
 
-const RecoveryChange = ({ router }) => {
+const RecoveryChange = () => {
 
     return (
         <>

@@ -1,17 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import { NextPage } from "next";
 
-import Navbar from "@components/Navbar";
-import Title from '@components/Title';
-import Container from '@components/layout/Container';
-import WildProvider from "@components/WildProvider";
-import * as ROUTES from "@constants/routes";
-import { Button } from "@components/layout/Buttons";
-import Link from "@components/Link";
-import Footer from "@components/Footer";
+import Navbar from "../components/Navbar";
+import Title from '../components/Title';
+import Container from '../components/layout/Container';
+import WildProvider from "../components/WildProvider";
+import * as ROUTES from "../constants/routes";
+import { Button } from "../components/layout/Buttons";
+import Link from "../components/Link";
+import Footer from "../components/Footer";
 
-const Landing: NextPage = () => {
+const Landing: React.FC = () => {
 
     const SpecRef = React.useRef<HTMLDivElement>();
 

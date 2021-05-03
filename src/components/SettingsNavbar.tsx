@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import Link from "./Link";
 
-import * as ROUTES from "@constants/routes";
+import * as ROUTES from "../constants/routes";
 
 const SettingsNavbar: React.FC = () => (
     <Container>

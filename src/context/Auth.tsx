@@ -1,18 +1,16 @@
-import React, {  createContext } from 'react';
+import React, { createContext } from 'react';
 import jwtDecode from 'jwt-decode';
 
 const initialState = {
     user: null
 };
-if (process.browser) {
-    if (localStorage.getItem('jwtToken')) {
-        const decodedToken: any = jwtDecode(localStorage.getItem('jwtToken'));
+if (localStorage.getItem('jwtToken')) {
+    const decodedToken: any = jwtDecode(localStorage.getItem('jwtToken'));
 
-        if (decodedToken.exp * 1000 < Date.now()) {
-            localStorage.removeItem('jwtToken');
-        } else {
-            initialState.user = decodedToken;
-        }
+    if (decodedToken.exp * 1000 < Date.now()) {
+        localStorage.removeItem('jwtToken');
+    } else {
+        initialState.user = decodedToken;
     }
 }
 
@@ -43,7 +41,7 @@ function AuthProvider(props) {
     const [state, dispatch] = React.useReducer(authReducer, initialState);
 
     function login(userData) {
-        if (process.browser) localStorage.setItem('jwtToken', userData.token);
+        localStorage.setItem('jwtToken', userData.token);
         dispatch({
             type: 'LOGIN',
             payload: userData
@@ -51,7 +49,7 @@ function AuthProvider(props) {
     }
 
     function logout() {
-        if (process.browser) localStorage.removeItem('jwtToken');
+        localStorage.removeItem('jwtToken');
         dispatch({ type: 'LOGOUT' });
     }
 

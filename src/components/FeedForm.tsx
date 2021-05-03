@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { useMutation } from '@apollo/react-hooks';
 
-import { useForm } from "@hooks/useForm";
-import { CREATE_POST, GET_POSTS } from '@queries/posts';
+import { useForm } from "../hooks/useForm";
+import { CREATE_POST, GET_POSTS } from '../queries/posts';
 import { Button } from "./layout/Buttons";
 
 

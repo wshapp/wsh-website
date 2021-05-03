@@ -3,7 +3,7 @@ import styled from "styled-components";
 import moment from 'moment';
 import Link from "./Link";
 import PostReactionLike from "./PostReactionLike";
-import { AuthContext } from "@context/Auth";
+import { AuthContext } from "../context/Auth";
 
 interface FeedCardPost {
     post: any;
