@@ -59,7 +59,6 @@ const App: React.FC = () => {
                   <Route path={ROUTES.HOUSE} component={House} />
                   <Route exact path={ROUTES.LANDING} component={Landing} />
                   
-                  <Route exact path="/error" component={Error} />
                   <Route component={Error} />
                 </Switch>
               </Router>
