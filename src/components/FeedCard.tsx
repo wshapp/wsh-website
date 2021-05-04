@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import styled from "styled-components";
 import moment from 'moment';
 import Link from "./Link";
@@ -38,7 +38,7 @@ const FeedCard: React.FC<FeedCardPost> = ({ post: { body, createdAt, id, usernam
 
 const Container = styled.div`
     width: calc(100% - 15px * 2);
-	margin: 0 2px 15px;
+	margin: 15px 2px 0;
 	padding: 15px;
 	transition: opacity .4s ease-in-out;
     display: inline-block;
@@ -119,4 +119,4 @@ const ReactionIcon = styled.i`
     font-size: 15px
 `;
 
-export default FeedCard;
+export default memo(FeedCard);

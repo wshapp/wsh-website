@@ -55,9 +55,7 @@ const FeedForm: React.FC = () => {
 }
 
 const Container = styled.div`
-    width: calc(100% - 15px * 2);
 	margin: 0 2px 15px;
-	padding: 15px;
 	transition: opacity .4s ease-in-out;
     display: inline-block;
     column-break-inside: avoid;
