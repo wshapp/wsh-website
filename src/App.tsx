@@ -23,7 +23,6 @@ import Messages from "./screens/Messages";
 import Error from "./screens/Error";
 
 import "remixicon/fonts/remixicon.css";
-import "./styles/app.scss";
 
 const App: React.FC = () => {
 
@@ -40,8 +39,8 @@ const App: React.FC = () => {
     <ApolloProvider client={apollo}>
       <AuthProvider>
         <ThemeProvider theme={theme}>
+          <GlobalStyle />
           <MainTrackProvider>
-            <GlobalStyle />
             <MainLayout>
               <Router>
                 <Switch>
@@ -58,7 +57,7 @@ const App: React.FC = () => {
 
                   <Route path={ROUTES.HOUSE} component={House} />
                   <Route exact path={ROUTES.LANDING} component={Landing} />
-                  
+
                   <Route component={Error} />
                 </Switch>
               </Router>
