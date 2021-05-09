@@ -150,6 +150,10 @@ const SpecContainer = styled.div`
     display: flex;
     min-height: calc(100vh - 60px * 2);
     user-select: none;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
 `;
 
 const SpecTextContainer = styled.div`
