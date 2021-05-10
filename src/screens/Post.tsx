@@ -1,15 +1,16 @@
 import styled from "styled-components";
 import { useParams } from "react-router";
 
-import Title from "../components/Title";
+import Title from "components/Title";
 import { useQuery } from "@apollo/client";
-import { GET_POST } from "../queries/posts";
-import SafeProvider from "../components/SafeProvider";
-import { SafeContainer, SafeContent, SafeContentBackground } from "../components/layout/Safe";
-import SideNavbar from "../components/SideNavbar";
-import Sidebar from "../components/Sidebar";
-import { Button } from "../components/layout/Buttons";
-import PostCard from "../components/PostCard";
+import { GET_POST } from "queries/posts";
+import SafeProvider from "components/SafeProvider";
+import { SafeContainer, SafeContent, SafeContentBackground } from "components/layout/Safe";
+import SideNavbar from "components/SideNavbar";
+import Sidebar from "components/Sidebar";
+import { Button } from "components/layout/Buttons";
+import PostCard from "components/PostCard";
+import PostComments from "components/PostComments";
 
 const SinglePost: React.FC = () => {
     const { id } = useParams();
@@ -41,7 +42,7 @@ const SinglePost: React.FC = () => {
                     </SafeContent>
                 </SafeContentBackground>
                 <Sidebar>
-                    Comments
+                    <PostComments />
                 </Sidebar>
             </SafeContainer>
         </SafeProvider>
