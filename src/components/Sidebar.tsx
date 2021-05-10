@@ -34,6 +34,7 @@ const Content = styled.div`
     flex-direction: column;
     overflow: auto;
     flex: 1;
+    padding: 15px;
 `;
 
 

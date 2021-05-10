@@ -25,10 +25,9 @@ const SettingsNavbar: React.FC = () => (
 const Container = styled.nav`
     display: flex;
     flex-direction: column;
-    padding: 15px;
 `;
 
-const Title = styled.h1`
+const Title = styled.h3`
     font-size: 20px;
     font-weight: 600;
     user-select: none;
