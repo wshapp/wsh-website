@@ -23,8 +23,13 @@ const FeedForm: React.FC = () => {
             const data: any = proxy.readQuery({
                 query: GET_POSTS
             });
-            data.getPosts = [result.data.createPost, ...data.getPosts];
-            proxy.writeQuery({ query: GET_POSTS, data });
+            proxy.writeQuery({
+                query: GET_POSTS,
+                data: {
+                    ...data,
+                    getPosts: [result.data.createPost, ...data.getPosts],
+                },
+            });
             values.body = '';
         }
     });

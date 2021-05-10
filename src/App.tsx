@@ -8,7 +8,7 @@ import MainLayout from "./components/layout/MainLayout";
 import GlobalStyle from "./components/layout/GlobalStyle";
 import { MainTrackProvider } from "./context/MainTrack";
 import { AuthProvider } from "./context/Auth";
-import { apollo } from "./services/apollo/withApollo";
+import { apollo } from "./services/apollo/client";
 import * as ROUTES from "./constants/routes";
 
 import Landing from "./screens/Landing";
