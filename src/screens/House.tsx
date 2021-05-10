@@ -37,7 +37,6 @@ const Container = styled.div`
     display: flex;
     flex: 1;
     justify-content: center;
-    overflow: auto;
 `;
 
 const Content = styled.div`

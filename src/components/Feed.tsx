@@ -28,6 +28,12 @@ const Container = styled.div`
     flex: 1 65%;
     padding: 15px;
     flex-direction: column;
+    overflow: auto;
+    
+    scrollbar-width: none; 
+    ::-webkit-scrollbar {
+        display: none;
+    }
 `;
 
 export default Feed;
