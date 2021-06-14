@@ -1,5 +1,10 @@
-import black from './black';
-import white from './white';
-import red from './red';
+import black from "./black";
+import main from "./main";
 
-export default { black: black, white: white, red: red };
+const complete = (theme) => {
+  return { ...main, ...theme };
+};
+
+const themes = { black: complete(black) };
+
+export default themes;
