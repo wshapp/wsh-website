@@ -16,13 +16,43 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "react-jsx",
-    "baseUrl": "./src/",
+    "jsx": "preserve",
     "allowSyntheticDefaultImports": true,
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "baseUrl": "./src/",
+    "paths": {
+      "@constants/*": [
+        "./constants/*"
+      ],
+      "@context/*": [
+        "./context/*"
+      ],
+      "@components/*": [
+        "./components/*"
+      ],
+      "@hooks/*": [
+        "./hooks/*"
+      ],
+      "@queries/*": [
+        "./queries/*"
+      ],
+      "@themes/*": [
+        "./themes/*"
+      ],
+      "@styles/*": [
+        "./styles/*"
+      ],
+      "@services/*": [
+        "./services/*"
+      ],
+      "@screens/*": [
+        "./screens/*"
+      ]
+    }
   },
   "include": [
-    "src"
+    "src",
+    "global.d.ts"
   ],
   "exclude": [
     "node_modules"
