@@ -1,4 +1,4 @@
-import gql from 'graphql-tag';
+import gql from "graphql-tag";
 
 export const GET_POSTS = gql`
   {
@@ -23,7 +23,7 @@ export const GET_POSTS = gql`
 `;
 
 export const GET_POST = gql`
-  query($id: ID!) {
+  query ($id: ID!) {
     getPost(postId: $id) {
       id
       body
