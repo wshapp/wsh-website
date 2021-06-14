@@ -1,16 +1,20 @@
-import React from 'react';
-import { Helmet } from "react-helmet";
+import NextHead from "next/head";
+import { APPNAME } from "@constants/main";
 
-import { APPNAME } from '../constants/main';
-
-const Head: React.FC = () => {
-
-    return (
-        <Helmet>
-            <title>{APPNAME}</title>
-        </Helmet>
-    )
+interface Props {
+  title: string;
+  subtitle?: string;
 }
 
+const Head: React.FC<Props> = ({ title, subtitle }: Props) => (
+  <NextHead>
+    <meta name="theme-color" content="#000000" />
+    <title>
+      {title
+        ? `${subtitle ? `${subtitle} - ` : ""}${title} | ${APPNAME}`
+        : APPNAME}
+    </title>
+  </NextHead>
+);
 
 export default Head;
