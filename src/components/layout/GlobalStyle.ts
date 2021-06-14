@@ -139,9 +139,9 @@ export default createGlobalStyle`
 
     html,
     body,
-    #root {
+    #__next {
         height: 100%;
-        background-color: ${props => props.theme.colors.layout.darkest};
+        background-color: ${({ theme }) => theme.colors.layout.darkest};
     }
 
     body,
@@ -152,7 +152,7 @@ export default createGlobalStyle`
         font-size: 16px;
         font-weight: 400;
         text-align: left;
-        color: ${props => props.theme.colors.text.lightest};
+        color: ${({ theme }) => theme.colors.text.lightest};
     }
 
     html {
