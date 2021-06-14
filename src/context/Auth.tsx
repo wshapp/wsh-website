@@ -1,60 +1,66 @@
-import React, { createContext } from 'react';
-import jwtDecode from 'jwt-decode';
+import React, { createContext } from "react";
+import jwtDecode from "jwt-decode";
 
 const initialState = {
-    user: null
+  user: null,
 };
-if (localStorage.getItem('jwtToken')) {
-    const decodedToken: any = jwtDecode(localStorage.getItem('jwtToken'));
+if (process.browser) {
+  if (localStorage.getItem("jwtToken")) {
+    const decodedToken: any = jwtDecode(localStorage.getItem("jwtToken"));
 
     if (decodedToken.exp * 1000 < Date.now()) {
-        localStorage.removeItem('jwtToken');
+      localStorage.removeItem("jwtToken");
     } else {
-        initialState.user = decodedToken;
+      initialState.user = decodedToken;
     }
+  }
 }
 
 const AuthContext = createContext({
-    user: null,
-    login: (userData) => { },
-    logout: () => { }
+  user: null,
+  login: (userData) => undefined,
+  logout: () => undefined,
 });
 
-function authReducer(state, action) {
-    switch (action.type) {
-        case 'LOGIN':
-            return {
-                ...state,
-                user: action.payload
-            };
-        case 'LOGOUT':
-            return {
-                ...state,
-                user: null
-            };
-        default:
-            return state;
-    }
-}
+const authReducer = (state, action) => {
+  switch (action.type) {
+    case "LOGIN":
+      return {
+        ...state,
+        user: action.payload,
+      };
+    case "LOGOUT":
+      return {
+        ...state,
+        user: null,
+      };
+    default:
+      return state;
+  }
+};
 
-function AuthProvider(props) {
-    const [state, dispatch] = React.useReducer(authReducer, initialState);
+const AuthProvider = (props) => {
+  const [state, dispatch] = React.useReducer(authReducer, initialState);
 
-    function login(userData) {
-        localStorage.setItem('jwtToken', userData.token);
-        dispatch({
-            type: 'LOGIN',
-            payload: userData
-        });
-    }
+  function login(userData) {
+    if (process.browser) localStorage.setItem("jwtToken", userData.token);
+    dispatch({
+      type: "LOGIN",
+      payload: userData,
+    });
+  }
 
-    function logout() {
-        localStorage.removeItem('jwtToken');
-        dispatch({ type: 'LOGOUT' });
-    }
+  function logout() {
+    if (process.browser) localStorage.removeItem("jwtToken");
+    dispatch({ type: "LOGOUT" });
+  }
 
-    return <AuthContext.Provider value={{ user: state.user, login, logout }} {...props} />
-
-}
+  return (
+    <AuthContext.Provider
+      value={{ user: state.user, login, logout }}
+      {...props}
+    />
+  );
+};
 
 export { AuthContext, AuthProvider };
