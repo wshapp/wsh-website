@@ -25,8 +25,7 @@
     "react-dom": "17.0.2",
     "remixicon": "^2.5.0",
     "styled-components": "^5.2.3",
-    "use-sound": "^2.0.1",
-    "web-vitals": "^1.1.1"
+    "use-sound": "^2.0.1"
   },
   "devDependencies": {
     "@types/node": "^14.14.37",
