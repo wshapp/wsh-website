@@ -18,7 +18,6 @@ FROM node:14-alpine AS runner
 WORKDIR /app
 
 ENV NODE_ENV production
-ENV NEXT_PUBLIC_API https://powerful-retreat-93797.herokuapp.com/
 
 RUN addgroup -g 1001 -S nodejs
 RUN adduser -S nextjs -u 1001
