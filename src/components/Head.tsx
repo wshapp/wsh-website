@@ -2,7 +2,7 @@ import NextHead from "next/head";
 import { APPNAME } from "@constants/main";
 
 interface Props {
-  title: string;
+  title?: string;
   subtitle?: string;
 }
 
