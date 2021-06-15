@@ -5,8 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "export": "next build && next export"
+    "start": "next start -p ${PORT:=3000}",
+    "export": "next build && next export",
+    "docker:build": "docker build . -t wsh-website",
+    "docker:run": "docker run -p 3000:3000 wsh-website"
   },
   "dependencies": {
     "@apollo/react-hooks": "^4.0.0",
