@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 import Link from "./Link";
-import { Button } from "./layout/Buttons";
+import { Button } from "./Layout/Buttons";
 import * as ROUTES from "../constants/routes";
-import { WshLogo } from "./layout/Icons";
+import { WshLogo } from "./Layout/Icons";
 
 const Navbar: React.FC = () => (
   <NavbarContainer>

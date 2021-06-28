@@ -1,6 +1,6 @@
 import Head from "./Head";
 import styled from "styled-components";
-import { Button } from "./layout/Buttons";
+import { Button } from "./Layout/Buttons";
 
 const ManageAccount: React.FC = () => (
   <Container>
