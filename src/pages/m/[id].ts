@@ -1,3 +1,3 @@
-import Message from "@screens/Message";
+import Message from "@screens/App/Message";
 
 export default Message;

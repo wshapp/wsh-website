@@ -12,6 +12,7 @@ if (process.browser) {
       localStorage.removeItem("jwtToken");
     } else {
       initialState.user = decodedToken;
+      console.log(initialState.user);
     }
   }
 }

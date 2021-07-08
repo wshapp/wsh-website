@@ -19,42 +19,37 @@
     "jsx": "preserve",
     "allowSyntheticDefaultImports": true,
     "noFallthroughCasesInSwitch": true,
-    "baseUrl": "./src/",
+    "baseUrl": ".",
     "paths": {
       "@constants/*": [
-        "./constants/*"
+        "./src/constants/*"
       ],
       "@context/*": [
-        "./context/*"
+        "./src/context/*"
       ],
       "@components/*": [
-        "./components/*"
+        "./src/components/*"
       ],
       "@hooks/*": [
-        "./hooks/*"
+        "./src/hooks/*"
       ],
       "@queries/*": [
-        "./queries/*"
+        "./src/queries/*"
       ],
       "@themes/*": [
-        "./themes/*"
+        "./src/themes/*"
       ],
       "@styles/*": [
-        "./styles/*"
+        "./src/styles/*"
       ],
       "@services/*": [
-        "./services/*"
+        "./src/services/*"
       ],
       "@screens/*": [
-        "./screens/*"
+        "./src/screens/*"
       ]
     }
   },
-  "include": [
-    "src",
-    "global.d.ts"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
 }

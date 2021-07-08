@@ -4,14 +4,15 @@ import { ThemeProvider } from "styled-components";
 import { ApolloProvider } from "@apollo/react-hooks";
 
 import themes from "@services/themes";
-import Head from "@components/Head";
-import MainLayout from "@components/layout/MainLayout";
-import GlobalStyle from "@components/layout/GlobalStyle";
+
+import Main from "@components/Main/Layout/Main";
+import GlobalStyle from "@components/Main/Layout/GlobalStyle";
 import { MainTrackProvider } from "@context/MainTrack";
 import { AuthProvider } from "@context/Auth";
 import withApollo, { apollo } from "@services/apollo/client";
 
 import "remixicon/fonts/remixicon.css";
+import Head from "@components/Main/Head";
 
 const App = ({ Component, pageProps }: AppProps) => {
   let storedTheme;
@@ -29,9 +30,9 @@ const App = ({ Component, pageProps }: AppProps) => {
           <Head />
           <GlobalStyle />
           <MainTrackProvider>
-            <MainLayout>
+            <Main>
               <Component {...pageProps} theme={theme} setTheme={setTheme} />
-            </MainLayout>
+            </Main>
           </MainTrackProvider>
         </ThemeProvider>
       </AuthProvider>

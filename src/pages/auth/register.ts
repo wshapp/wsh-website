@@ -1,3 +1,3 @@
-import SignUp from "@screens/Auth/SignUp";
+import SignUp from "@screens/Public/Auth/SignUp";
 
 export default SignUp;

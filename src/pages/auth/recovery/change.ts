@@ -1,3 +1,3 @@
-import RecoveryChange from "@screens/Auth/Recovery/Change";
+import RecoveryChange from "@screens/Public/Auth/Recovery/Change";
 
 export default RecoveryChange;
