@@ -5,7 +5,7 @@ import Infobar from "@components/App/Sidebar/Info";
 import Link from "@components/Main/Link";
 
 interface ChannelHeaderProps {
-  receiverId: number;
+  receiverId: string;
 }
 
 const ChannelHeader: React.FC<ChannelHeaderProps> = ({

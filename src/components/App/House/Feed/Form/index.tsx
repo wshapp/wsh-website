@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import { useMutation } from "@apollo/react-hooks";
 
-import { useForm } from "../../../../../hooks/useForm";
-import { CREATE_POST, GET_POSTS } from "../../../../../queries/posts";
-import { Button } from "../../../../Main/Layout/Button";
+import { useForm } from "@hooks/useForm";
+import { CREATE_POST, GET_POSTS } from "@queries/posts";
+import { Button } from "@components/Main/Layout/Button";
 
 const FeedForm: React.FC = () => {
   const createPostCallback = () => {
@@ -18,6 +18,7 @@ const FeedForm: React.FC = () => {
   const [createPost, { error }] = useMutation(CREATE_POST, {
     variables: values,
     update(proxy, result) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const data: any = proxy.readQuery({
         query: GET_POSTS,
       });

@@ -19,7 +19,7 @@ const PublicProvider: React.FC<PublicProviderProps> = ({
 
   React.useEffect(() => {
     if (user && !noRedirect) router.push(ROUTES.HOUSE);
-  }, []);
+  }, [router, noRedirect, user]);
 
   return user ? <Loading /> : <>{children}</>;
 };

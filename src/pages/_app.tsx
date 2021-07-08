@@ -15,11 +15,11 @@ import "remixicon/fonts/remixicon.css";
 import Head from "@components/Main/Head";
 
 const App = ({ Component, pageProps }: AppProps) => {
-  let storedTheme;
+  const [storedTheme, setStoredTheme] = React.useState(null);
   const [theme, setTheme] = React.useState(storedTheme ?? themes.black);
 
   React.useEffect(() => {
-    storedTheme = localStorage.getItem("theme");
+    setStoredTheme(localStorage.getItem("theme"));
     console.log(storedTheme);
   }, [storedTheme]);
 
@@ -31,7 +31,7 @@ const App = ({ Component, pageProps }: AppProps) => {
           <GlobalStyle />
           <MainTrackProvider>
             <Main>
-              <Component {...pageProps} theme={theme} setTheme={setTheme} />
+              <Component {...pageProps} />
             </Main>
           </MainTrackProvider>
         </ThemeProvider>

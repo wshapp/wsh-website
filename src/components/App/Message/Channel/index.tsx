@@ -7,7 +7,7 @@ import ChannelToolbar from "./Toolbar";
 import Head from "../../../Main/Head";
 
 interface ChannelProps {
-  id: any;
+  id: string;
 }
 
 const Channel: React.FC<ChannelProps> = ({ id }: ChannelProps) => {
