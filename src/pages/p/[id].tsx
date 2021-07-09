@@ -1,3 +1,3 @@
-import Post from "@screens/App/House/Post";
+import Post from "@screens/Main/Error";
 
 export default Post;
