@@ -1,8 +1,9 @@
 import Link from "@components/Main/Link";
 import styled from "styled-components";
 import * as ROUTES from "@constants/routes";
+import { NextPage } from "next";
 
-const Error: React.FC = () => (
+const Error: NextPage = () => (
   <Container>
     <Title>Sorry, this page isn&apos;t available.</Title>
     <Description>
