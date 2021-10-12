@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "lint": "next lint",
     "start": "next start -p ${PORT:=3000}",
     "export": "next build && next export",
     "docker:build": "docker build . -t wsh-website",
