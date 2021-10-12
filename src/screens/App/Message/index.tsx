@@ -24,7 +24,7 @@ const Message: React.FC = () => {
         <AppContentBackground>
           <AppContent>
             <Inbox />
-            {id ? <Channel id={id} /> : <ChannelEmpty />}
+            {id ? <Channel id={id as string} /> : <ChannelEmpty />}
           </AppContent>
         </AppContentBackground>
       </AppContainer>
